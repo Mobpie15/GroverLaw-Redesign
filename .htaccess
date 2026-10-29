@@ -1,0 +1,55 @@
+# =========================================================================
+# Groverlaw - Apache Hardened Configuration (.htaccess)
+# Designed for Grade A+ Security on securityheaders.com
+# =========================================================================
+
+# 1. Force HTTPS and canonical hostname
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 2. Strict HTTP Security Headers
+<IfModule mod_headers.c>
+  # HTTP Strict Transport Security (HSTS) - 2 years + subdomains + preload
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+  # Content Security Policy (CSP)
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; frame-src 'self' https://www.google.com https://maps.google.co.in https://maps.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; upgrade-insecure-requests;"
+
+  # Prevent MIME Sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Clickjacking Prevention
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Cross-Site Scripting Filter
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permissions Policy (Restrict unneeded hardware and APIs)
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), vr=(), interest-cohort=()"
+
+  # Cross-Origin Policies
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  Header always set Cross-Origin-Resource-Policy "same-origin"
+
+  # Remove server banner leakage
+  Header unset X-Powered-By
+  Header unset Server
+</IfModule>
+
+# 3. Disable Directory Browsing (Prevents information disclosure)
+Options -Indexes
+
+# 4. Block access to hidden files and version control
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# 5. Disable Server Signature
+ServerSignature Off

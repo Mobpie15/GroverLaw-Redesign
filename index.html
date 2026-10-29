@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GroverLaw | Advocates & Solicitors | New Delhi & Gurgaon</title>
+  <meta name="description" content="GroverLaw is an Indian law practice led by Vikram Grover, Advocate (India, 1996) and Solicitor (England & Wales, 2002). Practical counsel in Intellectual Property, Commercial Law, and Dispute Resolution.">
+
+  <!-- ========================================================================= -->
+  <!-- TYPOGRAPHY: Fraunces (Warm Editorial Serif) & DM Sans (Modern Humanist)   -->
+  <!-- ========================================================================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Tailwind CSS CDN for Structural Utility Classes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            warmIvory: '#FBF7F1',     /* Specified warm ivory canvas */
+            deepNavy: '#0F1B33',      /* Specified primary navy text & card */
+            brandOrange: '#EB6A1D',   /* Specified vibrant brand orange accent */
+            brandOrangeHover: '#D45A13',
+            slateMuted: '#52607A',    /* Balanced secondary text */
+            borderIvory: '#E9E2D8',   /* Delicate divider */
+          },
+          fontFamily: {
+            serif: ['"Fraunces"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ========================================================================= -->
+  <!-- MOTION DESIGN ENGINE: CSS VARIABLES & COMPOSITOR-ONLY ANIMATIONS          -->
+  <!-- ========================================================================= -->
+  <style>
+    /* -------------------------------------------------------------------------
+       1. TUNABLE MOTION VARIABLES (Adjust timings, distances, and curves here)
+       ------------------------------------------------------------------------- */
+    :root {
+      /* Animation Speeds */
+      --anim-duration-hero: 650ms;      /* Hero entrance speed (500–700ms rule) */
+      --anim-duration-card: 720ms;      /* Profile card entrance speed */
+      --anim-duration-underline: 600ms; /* Headline underline draw speed */
+      --anim-duration-ui: 240ms;        /* Button and link hover responsiveness */
+
+      /* Stagger Delays (80–120ms intervals) */
+      --stagger-step: 100ms;
+      --delay-eyebrow: 100ms;
+      --delay-headline: calc(var(--delay-eyebrow) + var(--stagger-step));       /* 200ms */
+      --delay-paragraph: calc(var(--delay-headline) + var(--stagger-step));     /* 300ms */
+      --delay-buttons: calc(var(--delay-paragraph) + var(--stagger-step));       /* 400ms */
+      --delay-stats: calc(var(--delay-buttons) + var(--stagger-step));           /* 500ms */
+      --delay-card: 350ms;                                                       /* Card begins after headline */
+      --delay-underline: calc(var(--delay-headline) + 260ms);                    /* Underline draws as headline settles */
+
+      /* Travel Distances (Gentle, low-impact shifts) */
+      --slide-distance-y: 18px;
+      --slide-distance-x: 22px;
+
+      /* Smooth, Natural Ease-Out Timing Curve */
+      --ease-out-law: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-draw: cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #FBF7F1;
+      color: #0F1B33;
+    }
+
+    /* -------------------------------------------------------------------------
+       2. SUBTLE AMBIENT BACKGROUND DETAIL (Soft, non-distracting depth)
+       ------------------------------------------------------------------------- */
+    .bg-ambient-grain {
+      background-image: 
+        radial-gradient(circle at 18% 12%, rgba(235, 106, 29, 0.035) 0%, transparent 45%),
+        radial-gradient(circle at 85% 65%, rgba(15, 27, 51, 0.025) 0%, transparent 50%);
+    }
+
+    /* -------------------------------------------------------------------------
+       3. PAGE-LOAD HERO ENTRANCE (Transforms & Opacity Only — Zero Layout Shift)
+       ------------------------------------------------------------------------- */
+    @keyframes heroFadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(var(--slide-distance-y));
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes cardFadeSlideRight {
+      from {
+        opacity: 0;
+        transform: translateX(var(--slide-distance-x));
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Apply CSS-native animations (Guarantees content is visible even without JS) */
+    .anim-hero-eyebrow {
+      animation: heroFadeSlideUp var(--anim-duration-hero) var(--ease-out-law) var(--delay-eyebrow) both;
+    }
+    .anim-hero-headline {
+      animation: heroFadeSlideUp var(--anim-duration-hero) var(--ease-out-law) var(--delay-headline) both;
+    }
+    .anim-hero-paragraph {
+      animation: heroFadeSlideUp var(--anim-duration-hero) var(--ease-out-law) var(--delay-paragraph) both;
+    }
+    .anim-hero-buttons {
+      animation: heroFadeSlideUp var(--anim-duration-hero) var(--ease-out-law) var(--delay-buttons) both;
+    }
+    .anim-hero-stats {
+      animation: heroFadeSlideUp var(--anim-duration-hero) var(--ease-out-law) var(--delay-stats) both;
+    }
+    .anim-profile-card {
+      animation: cardFadeSlideRight var(--anim-duration-card) var(--ease-out-law) var(--delay-card) both;
+    }
+
+    /* -------------------------------------------------------------------------
+       4. HEADLINE ACCENT: DRAW-IN UNDERLINE REVEAL
+       ------------------------------------------------------------------------- */
+    .headline-accent {
+      position: relative;
+      display: inline-block;
+      color: #EB6A1D;
+      white-space: nowrap;
+    }
+
+    .headline-accent::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 3px;
+      background-color: #EB6A1D;
+      border-radius: 2px;
+      transform-origin: left center;
+      transform: scaleX(0);
+      animation: underlineDraw var(--anim-duration-underline) var(--ease-draw) var(--delay-underline) forwards;
+    }
+
+    @keyframes underlineDraw {
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    /* -------------------------------------------------------------------------
+       5. PROFILE CARD DEPTH HOVER
+       ------------------------------------------------------------------------- */
+    .profile-card-depth {
+      transition: transform var(--anim-duration-ui) var(--ease-out-law),
+                  box-shadow var(--anim-duration-ui) var(--ease-out-law);
+      will-change: transform;
+    }
+    .profile-card-depth:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 35px -10px rgba(15, 27, 51, 0.28);
+    }
+
+    /* -------------------------------------------------------------------------
+       6. BUTTON HOVER, LIFT & ARROW NUDGE
+       ------------------------------------------------------------------------- */
+    .btn-lift {
+      transition: transform var(--anim-duration-ui) var(--ease-out-law),
+                  background-color var(--anim-duration-ui) ease,
+                  box-shadow var(--anim-duration-ui) ease,
+                  border-color var(--anim-duration-ui) ease;
+      will-change: transform;
+    }
+    .btn-lift:hover {
+      transform: translateY(-2px);
+    }
+    .btn-lift:active {
+      transform: translateY(0);
+    }
+    .btn-arrow-icon {
+      transition: transform var(--anim-duration-ui) var(--ease-out-law);
+      will-change: transform;
+    }
+    .btn-lift:hover .btn-arrow-icon {
+      transform: translateX(4px);
+    }
+
+    /* Keyboard Accessible Focus Rings */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+      outline: 2px solid #EB6A1D !important;
+      outline-offset: 3px !important;
+    }
+
+    /* -------------------------------------------------------------------------
+       7. NAVIGATION SLIDING UNDERLINE & HEADER ELEVATION SHADOW
+       ------------------------------------------------------------------------- */
+    .nav-link-animated {
+      position: relative;
+      transition: color var(--anim-duration-ui) ease;
+    }
+    .nav-link-animated::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background-color: #EB6A1D;
+      border-radius: 1px;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform var(--anim-duration-ui) var(--ease-out-law);
+    }
+    .nav-link-animated:hover::after,
+    .nav-link-animated.active::after {
+      transform: scaleX(1);
+    }
+
+    /* Header shadow added via JavaScript on scroll */
+    .header-scrolled {
+      box-shadow: 0 8px 24px -8px rgba(15, 27, 51, 0.08);
+      background-color: rgba(251, 247, 241, 0.96) !important;
+    }
+
+    /* -------------------------------------------------------------------------
+       8. SCROLL REVEALS FOR SECTIONS BELOW HERO (Progressive Enhancement)
+       ------------------------------------------------------------------------- */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 650ms var(--ease-out-law),
+                  transform 650ms var(--ease-out-law);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* -------------------------------------------------------------------------
+       9. STRICT PREFERS-REDUCED-MOTION (Accessibility First)
+       ------------------------------------------------------------------------- */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transform: none !important;
+        scroll-behavior: auto !important;
+      }
+      .headline-accent::after {
+        transform: scaleX(1) !important;
+      }
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-warmIvory text-deepNavy font-sans antialiased selection:bg-brandOrange/15 selection:text-deepNavy bg-ambient-grain min-h-screen">
+
+  <!-- ========================================================================= -->
+  <!-- BAR COUNCIL OF INDIA REGULATORY DISCLAIMER MODAL                          -->
+  <!-- ========================================================================= -->
+  <div id="bciModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-deepNavy/80 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="relative w-full max-w-xl rounded-2xl bg-white p-6 sm:p-8 shadow-2xl border-t-4 border-brandOrange">
+      <div class="flex items-start gap-4 pb-4 border-b border-slate-200">
+        <div class="p-2 rounded-xl bg-warmIvory border border-borderIvory shrink-0 shadow-sm flex items-center gap-2">
+          <img src="assets/images/emblem.png" alt="GroverLaw Emblem" class="h-9 w-9 object-contain shrink-0">
+          <img src="assets/images/wordmark.png" alt="GROVERLAW" class="h-4 w-auto object-contain">
+        </div>
+        <div>
+          <h2 id="modalTitle" class="text-xl font-bold font-serif text-deepNavy">Regulatory Compliance Notice</h2>
+          <p class="text-xs font-semibold uppercase tracking-wider text-brandOrange mt-0.5">Bar Council of India Rule 36</p>
+        </div>
+      </div>
+
+      <div class="mt-4 space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed max-h-72 overflow-y-auto pr-1">
+        <p>
+          As per the rules of the Bar Council of India, advocates are not permitted to solicit work or advertise. By proceeding, you acknowledge that:
+        </p>
+        <ul class="list-disc pl-5 space-y-1.5 text-slate-700">
+          <li>You are accessing this website voluntarily to obtain factual information about GroverLaw.</li>
+          <li>There has been no advertisement, personal communication, solicitation, or inducement of any sort by GroverLaw or its advocates.</li>
+          <li>The information provided here is educational and informational only. It does not constitute legal advice or create an advocate-client relationship.</li>
+        </ul>
+      </div>
+
+      <div class="mt-6 flex flex-col-reverse sm:flex-row items-center justify-end gap-3 pt-4 border-t border-slate-200">
+        <button id="bciDeclineBtn" class="w-full sm:w-auto px-5 py-2.5 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 font-medium text-xs sm:text-sm transition">
+          Decline & Exit
+        </button>
+        <button id="bciAcceptBtn" class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-deepNavy hover:bg-slate-800 text-white font-semibold text-xs sm:text-sm shadow transition">
+          I Agree & Proceed
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- TOP CREDENTIAL BAR (CLEAN, ACCESSIBLE, BALANCED)                          -->
+  <!-- ========================================================================= -->
+  <aside class="bg-deepNavy text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-slate-800" aria-label="Chambers Credentials">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2 text-center sm:text-left flex-wrap">
+        <span class="inline-block w-2 h-2 rounded-full bg-brandOrange"></span>
+        <span>Enrolled Advocate (India, 1996)</span>
+        <span class="text-slate-500">•</span>
+        <span>Solicitor (England & Wales, 2002)</span>
+        <span class="text-slate-500">•</span>
+        <span class="text-slate-200 font-medium">30 Years of Legal Practice</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-medium">
+        <a href="tel:+911244145520" class="hover:text-white transition flex items-center gap-1.5 text-slate-200">
+          <svg class="w-3.5 h-3.5 text-brandOrange" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+          +91-124-4145520
+        </a>
+        <a href="mailto:info@groverlaw.in" class="hover:text-white transition flex items-center gap-1.5 text-slate-200">
+          <svg class="w-3.5 h-3.5 text-brandOrange" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+          info@groverlaw.in
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================= -->
+  <!-- ANIMATION 6: STICKY NAVIGATION BAR WITH SLIDING UNDERLINES & SCROLL SHADOW -->
+  <!-- ========================================================================= -->
+  <header id="mainHeader" class="sticky top-0 z-40 bg-warmIvory/95 backdrop-blur border-b border-borderIvory transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
+      
+      <!-- Brand Logo (Balanced Emblem + Wordmark) -->
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <img src="assets/images/emblem.png" alt="GroverLaw Emblem" class="h-11 sm:h-12 w-11 sm:w-12 object-contain shrink-0">
+        <div class="flex flex-col justify-center">
+          <img src="assets/images/wordmark.png" alt="GROVERLAW" class="h-5 sm:h-6 w-auto object-contain">
+          <div class="flex items-center gap-1.5 mt-1">
+            <span class="text-[9px] sm:text-[10px] tracking-widest text-slate500 uppercase font-semibold leading-none text-slate-500">
+              Advocates &amp; Solicitors
+            </span>
+            <span class="text-[9px] text-slate-400 hidden sm:inline">• New Delhi • Gurgaon</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Links with Animated Underline -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-deepNavy" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link-animated active font-semibold text-brandOrange">Home</a>
+        <a href="#about" class="nav-link-animated hover:text-brandOrange">About Our Firm</a>
+        <a href="#practice" class="nav-link-animated hover:text-brandOrange">Practice Areas</a>
+        <a href="#founder" class="nav-link-animated hover:text-brandOrange">Our Founder</a>
+        <a href="#locations" class="nav-link-animated hover:text-brandOrange">Chambers &amp; Offices</a>
+      </nav>
+
+      <!-- Primary Consultation CTA -->
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="btn-lift hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-deepNavy hover:bg-slate-800 text-white font-medium text-xs sm:text-sm shadow-sm transition">
+          <span>Book a consultation</span>
+          <svg class="btn-arrow-icon w-4 h-4 text-brandOrange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-deepNavy hover:bg-black/5 transition" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-warmIvory border-t border-borderIvory px-6 py-5 space-y-3 shadow-lg">
+      <div class="flex justify-between items-center pb-2 border-b border-borderIvory">
+        <span class="font-serif font-bold text-deepNavy text-base">Navigation</span>
+        <button id="closeMobileMenuBtn" class="text-slateMuted hover:text-deepNavy text-sm font-semibold">✕ Close</button>
+      </div>
+      <nav class="flex flex-col space-y-2.5 text-sm font-medium text-deepNavy" aria-label="Mobile Navigation">
+        <a href="index.html" class="text-brandOrange font-semibold py-1">Home</a>
+        <a href="#about" class="mobile-nav-link hover:text-brandOrange py-1">About Our Firm</a>
+        <a href="#practice" class="mobile-nav-link hover:text-brandOrange py-1">Practice Areas</a>
+        <a href="#founder" class="mobile-nav-link hover:text-brandOrange py-1">Our Founder</a>
+        <a href="#locations" class="mobile-nav-link hover:text-brandOrange py-1">Chambers &amp; Offices</a>
+      </nav>
+      <div class="pt-3 border-t border-borderIvory">
+        <a href="#contact" class="mobile-nav-link block text-center w-full py-2.5 rounded-lg bg-deepNavy text-white font-medium text-sm">
+          Book a consultation
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- HERO SECTION WITH STAGGERED ENTRANCE & ACCENT REVEAL                      -->
+  <!-- ========================================================================= -->
+  <main>
+    <section class="py-16 sm:py-24 border-b border-borderIvory relative overflow-hidden" aria-labelledby="heroHeading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          
+          <!-- Left Column: Content Flow -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <!-- ANIMATION 1.1: Eyebrow Badge (100ms delay) -->
+            <div class="anim-hero-eyebrow">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-borderIvory text-deepNavy text-xs font-semibold tracking-wide shadow-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-brandOrange"></span>
+                Independent Indian Law Practice • Established 1996
+              </div>
+            </div>
+
+            <!-- ANIMATION 1.2 & 2: Headline + Draw-In Orange Underline (200ms delay) -->
+            <h1 id="heroHeading" class="anim-hero-headline text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-deepNavy leading-tight tracking-tight">
+              Protecting your ideas and business in India, with <span class="headline-accent">advice you can act on</span>.
+            </h1>
+
+            <!-- ANIMATION 1.3: Intro Paragraph (300ms delay) -->
+            <p class="anim-hero-paragraph text-base sm:text-lg text-slateMuted leading-relaxed font-normal max-w-2xl">
+              Whether you are launching a product, protecting a brand name, securing a patent, or negotiating commercial contracts in India, we give you straightforward guidance without the legal clutter. Based in New Delhi and Gurgaon, dual-qualified in India and the UK.
+            </p>
+
+            <!-- ANIMATION 1.4 & 5: Buttons with Hover Lift & Arrow Nudge (400ms delay) -->
+            <div class="anim-hero-buttons flex flex-wrap items-center gap-4 pt-2">
+              <a href="#contact" class="btn-lift inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-brandOrange hover:bg-brandOrangeHover text-white font-semibold text-sm shadow-sm">
+                <span>Book a consultation</span>
+                <svg class="btn-arrow-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <a href="#practice" class="btn-lift inline-flex items-center px-6 py-3.5 rounded-lg bg-white hover:bg-slate-50 text-deepNavy font-semibold text-sm border border-borderIvory shadow-xs">
+                See our practice areas
+              </a>
+            </div>
+
+            <!-- ANIMATION 1.5 & 4: Stats Row with Smooth Number Count-Up (500ms delay) -->
+            <div id="statsRow" class="anim-hero-stats grid grid-cols-3 gap-6 pt-8 border-t border-borderIvory">
+              <div>
+                <p class="text-2xl sm:text-3xl font-serif font-bold text-deepNavy">
+                  <span class="count-up-target" data-target="30">30</span> Years
+                </p>
+                <p class="text-xs text-slateMuted mt-1">Practicing in Indian courts and registries since 1996</p>
+              </div>
+              <div>
+                <p class="text-2xl sm:text-3xl font-serif font-bold text-deepNavy">
+                  <span class="count-up-target" data-target="2">2</span> Systems
+                </p>
+                <p class="text-xs text-slateMuted mt-1">Enrolled Advocate (India) & Solicitor (England & Wales)</p>
+              </div>
+              <div>
+                <p class="text-2xl sm:text-3xl font-serif font-bold text-deepNavy">Direct</p>
+                <p class="text-xs text-slateMuted mt-1">Personal counsel from senior lawyers, not proxies</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ANIMATION 3: Profile Card (Slides & Fades from Right, Depth Hover on Hover) -->
+          <div class="lg:col-span-5" id="founder">
+            <div class="anim-profile-card profile-card-depth bg-deepNavy text-white rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl relative">
+              
+              <!-- Real Headshot Placement / Frame -->
+              <div class="flex items-center gap-4 pb-5 border-b border-slate-800">
+                <div class="w-16 h-16 rounded-full bg-slate-800 border-2 border-brandOrange/60 flex items-center justify-center overflow-hidden shrink-0 shadow-inner">
+                  <!-- Photo placeholder for Vikram Grover -->
+                  <svg class="w-10 h-10 text-slate-400" fill="currentColor" viewBox="0 0 24 24" aria-label="Vikram Grover Headshot Placeholder">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-lg font-bold font-serif text-white">Vikram Grover</h2>
+                  <p class="text-xs font-semibold text-brandOrange">Advocate &amp; Solicitor</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Enrolled India (1996) • Roll of Solicitors (2002)</p>
+                </div>
+              </div>
+
+              <!-- Founder Quote -->
+              <blockquote class="py-5 text-xs sm:text-sm text-slate-300 leading-relaxed italic border-b border-slate-800 font-normal">
+                &ldquo;Clients don’t come to us for textbook recitations of the law. They come because they have a business to run, a deadline to meet, or a brand to protect—and they need honest, practical counsel on where they stand and what to do next.&rdquo;
+              </blockquote>
+
+              <!-- Factual Memberships (Compliant with BCI Rule 36) -->
+              <div class="pt-4 space-y-2 text-xs text-slate-400">
+                <p class="font-semibold text-slate-300 text-[11px] uppercase tracking-wider">Professional Associations:</p>
+                <div class="flex flex-wrap gap-1.5 text-[11px]">
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 border border-slate-700 text-slate-300">INTA</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 border border-slate-700 text-slate-300">APAA</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 border border-slate-700 text-slate-300">ECTA</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 border border-slate-700 text-slate-300">INBA</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 border border-slate-700 text-slate-300">Delhi High Court Bar</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- ANIMATION 8: SCROLL REVEALED SECTIONS (ABOUT, PRACTICE, CHAMBERS, CONTACT)-->
+    <!-- ========================================================================= -->
+    <section id="about" class="py-16 sm:py-24 border-b border-borderIvory reveal-on-scroll" aria-labelledby="aboutHeading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <p class="text-xs font-bold uppercase tracking-wider text-brandOrange">About GroverLaw</p>
+          <h2 id="aboutHeading" class="mt-2 text-3xl sm:text-4xl font-serif font-bold text-deepNavy">
+            A boutique practice focused on substance over ceremony
+          </h2>
+          <div class="w-12 h-1 bg-brandOrange mt-3 mb-5"></div>
+          <p class="text-slateMuted text-base leading-relaxed">
+            We are an independent law practice based in New Delhi and Gurgaon. We advise Indian businesses, international enterprises, innovators, and founders on protecting their intellectual property and structuring cross-border business transactions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl p-6 border border-borderIvory shadow-xs space-y-3">
+            <h3 class="text-lg font-bold font-serif text-deepNavy">Dual Legal Perspective</h3>
+            <p class="text-xs sm:text-sm text-slateMuted leading-relaxed">
+              Vikram Grover qualified in India in 1996 and in England & Wales in 2002. This allows us to bridge common law principles with Indian statutory realities seamlessly, particularly in international contracts, cross-border technology transfers, and inbound investments.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border border-borderIvory shadow-xs space-y-3">
+            <h3 class="text-lg font-bold font-serif text-deepNavy">In-House Search Databases</h3>
+            <p class="text-xs sm:text-sm text-slateMuted leading-relaxed">
+              We maintain comprehensive in-house searchable records of published trademarks in the Trade Marks Journal, patents, and registered designs. This gives our clients fast, reliable clearance searches before they commit capital to brand launches or R&D.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border border-borderIvory shadow-xs space-y-3">
+            <h3 class="text-lg font-bold font-serif text-deepNavy">Real Courtroom Experience</h3>
+            <p class="text-xs sm:text-sm text-slateMuted leading-relaxed">
+              We appear before the High Courts across India (including the specialized Intellectual Property Division of the Delhi High Court), the Supreme Court of India, the Patent & Trademark Registries, and arbitration panels.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section id="practice" class="py-16 sm:py-24 bg-white border-b border-borderIvory reveal-on-scroll" aria-labelledby="practiceHeading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <p class="text-xs font-bold uppercase tracking-wider text-brandOrange">Our Focus</p>
+          <h2 id="practiceHeading" class="mt-2 text-3xl sm:text-4xl font-serif font-bold text-deepNavy">
+            What we do for your business
+          </h2>
+          <div class="w-12 h-1 bg-brandOrange mt-3 mb-5"></div>
+          <p class="text-slateMuted text-base leading-relaxed">
+            We focus deeply on intellectual property, commercial contracts, and dispute resolution. Here is how we help clients every day:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-warmIvory rounded-xl p-6 border border-borderIvory space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-brandOrange uppercase tracking-wider">Trademarks</span>
+              <span class="text-[11px] text-slateMuted font-medium">Domestic & Madrid Protocol</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-deepNavy">Brand Protection</h3>
+            <p class="text-xs sm:text-sm text-slateMuted leading-relaxed">
+              Your brand is your reputation. We help you choose names and logos you can legally defend, register them in India and internationally, handle oppositions, and stop competitors from passing off their goods as yours.
+            </p>
+          </div>
+
+          <div class="bg-warmIvory rounded-xl p-6 border border-borderIvory space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-brandOrange uppercase tracking-wider">Patents</span>
+              <span class="text-[11px] text-slateMuted font-medium">PCT & National Phase</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-deepNavy">Patents & Inventions</h3>
+            <p class="text-xs sm:text-sm text-slateMuted leading-relaxed">
+              From drafting specifications to navigating Indian Patent Office objections and Computer Related Invention (CRI) guidelines, we protect technological advances for startups, researchers, and global corporations.
+            </p>
+          </div>
+
+          <div class="bg-warmIvory rounded-xl p-6 border border-borderIvory space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-brandOrange uppercase tracking-wider">Designs & Code</span>
+              <span class="text-[11px] text-slateMuted font-medium">Kolkata Design Wing</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-deepNavy">Industrial Designs & Copyright</h3>
+            <p class="text-xs sm:text-sm text-slateMuted leading-relaxed">
+              We register aesthetic product shapes under the Locarno system and protect original software code, creative content, and packaging against unauthorized duplication.
+            </p>
+          </div>
+
+          <div class="bg-warmIvory rounded-xl p-6 border border-borderIvory space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-brandOrange uppercase tracking-wider">Enforcement</span>
+              <span class="text-[11px] text-slateMuted font-medium">Courts & Customs</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-deepNavy">Anti-Counterfeiting & Raids</h3>
+            <p class="text-xs sm:text-sm text-slateMuted leading-relaxed">
+              When someone knocks off your products, we take decisive steps: court injunctions, search-and-seizure operations with Court Commissioners, police actions, and border control recordals under Customs rules.
+            </p>
+          </div>
+
+          <div class="bg-warmIvory rounded-xl p-6 border border-borderIvory space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-brandOrange uppercase tracking-wider">Corporate</span>
+              <span class="text-[11px] text-slateMuted font-medium">FEMA & Companies Act</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-deepNavy">Commercial Contracts & FDI</h3>
+            <p class="text-xs sm:text-sm text-slateMuted leading-relaxed">
+              Clear, enforceable agreements for licensing, technology transfers, franchising, and distribution. We also guide foreign companies setting up Indian subsidiaries and complying with RBI and FEMA guidelines.
+            </p>
+          </div>
+
+          <div class="bg-warmIvory rounded-xl p-6 border border-borderIvory space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-brandOrange uppercase tracking-wider">Litigation</span>
+              <span class="text-[11px] text-slateMuted font-medium">Courts & ADR</span>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-deepNavy">Dispute Resolution</h3>
+            <p class="text-xs sm:text-sm text-slateMuted leading-relaxed">
+              We represent clients in trial and appellate courts, arbitration, and mandatory pre-institution mediation under the Commercial Courts Act, 2015. We also handle .IN domain name disputes under INDRP.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Chambers & Offices -->
+    <section id="locations" class="py-16 sm:py-24 border-b border-borderIvory reveal-on-scroll" aria-labelledby="chambersHeading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <p class="text-xs font-bold uppercase tracking-wider text-brandOrange">Our Chambers</p>
+          <h2 id="chambersHeading" class="mt-2 text-3xl sm:text-4xl font-serif font-bold text-deepNavy">
+            Where to find us in New Delhi and Gurgaon
+          </h2>
+          <div class="w-12 h-1 bg-brandOrange mt-3 mb-5"></div>
+          <p class="text-slateMuted text-base leading-relaxed">
+            We meet clients by prior appointment at our Delhi Chamber in Green Park Extension and our primary office in Sushant Lok I, Gurgaon.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl p-6 sm:p-7 border border-borderIvory shadow-xs space-y-4">
+            <div class="flex justify-between items-start border-b border-borderIvory pb-3">
+              <div>
+                <h3 class="text-xl font-bold font-serif text-deepNavy">Delhi Chamber</h3>
+                <p class="text-xs text-slateMuted">South West Delhi</p>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded bg-warmIvory text-deepNavy">Chamber</span>
+            </div>
+            <address class="text-xs sm:text-sm text-slateMuted not-italic leading-relaxed">
+              H 36 Green Park Extension<br>
+              New Delhi 110016, India
+            </address>
+            <div class="rounded-lg overflow-hidden border border-borderIvory">
+              <iframe 
+                title="Map to Delhi Chamber at Green Park Extension"
+                class="w-full h-48 border-0" 
+                src="https://maps.google.co.in/maps?q=H+36+Green+Park+Extension+New+Delhi+110016,+India&amp;ie=UTF8&amp;hq=&amp;hnear=H-36,+Green+Park+Extension,+Green+Park,+New+Delhi,+South+West+Delhi,+Delhi&amp;t=m&amp;z=14&amp;ll=28.560626,77.204479&amp;output=embed" 
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 sm:p-7 border border-borderIvory shadow-xs space-y-4">
+            <div class="flex justify-between items-start border-b border-borderIvory pb-3">
+              <div>
+                <h3 class="text-xl font-bold font-serif text-deepNavy">Gurgaon Office</h3>
+                <p class="text-xs text-slateMuted">National Capital Region (NCR)</p>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded bg-warmIvory text-deepNavy">Office</span>
+            </div>
+            <address class="text-xs sm:text-sm text-slateMuted not-italic leading-relaxed">
+              A 592 Sushant Lok – I<br>
+              Gurgaon, NCR Haryana 122009, India
+            </address>
+            <div class="rounded-lg overflow-hidden border border-borderIvory">
+              <iframe 
+                title="Map to Gurgaon Office at Sushant Lok I"
+                class="w-full h-48 border-0" 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14029.24151268762!2d77.0738113!3d28.470198000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18e18a2277d3%3A0x5fd67f492adb3943!2s591!5e0!3m2!1sen!2s!4v1404125607133" 
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Consultation Contact Form -->
+    <section id="contact" class="py-16 sm:py-24 bg-white reveal-on-scroll" aria-labelledby="contactHeading">
+      <div class="max-w-4xl mx-auto px-4 sm:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <p class="text-xs font-bold uppercase tracking-wider text-brandOrange">Get In Touch</p>
+          <h2 id="contactHeading" class="mt-2 text-3xl font-serif font-bold text-deepNavy">
+            Talk with our team
+          </h2>
+          <div class="w-12 h-1 bg-brandOrange mx-auto mt-3 mb-4"></div>
+          <p class="text-slateMuted text-sm leading-relaxed">
+            Send us a brief note about what you are dealing with. We will review your message confidentially and respond promptly.
+          </p>
+        </div>
+
+        <div class="bg-warmIvory rounded-2xl p-6 sm:p-10 border border-borderIvory shadow-xs">
+          
+          <form id="consultationForm" class="space-y-4" novalidate>
+            <!-- Security / Anti-Spam Honeypot & CSRF Fields -->
+            <div style="display:none;" aria-hidden="true">
+              <input type="text" name="website_fax_confirm" tabindex="-1" autocomplete="off" />
+              <input type="hidden" name="csrfToken" value="" />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="fullName" class="block text-xs font-semibold text-deepNavy uppercase tracking-wider mb-1.5">
+                  Your Full Name <span class="text-red-600" aria-hidden="true">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="fullName"
+                  name="fullName" 
+                  required 
+                  autocomplete="name"
+                  placeholder="e.g. Ramesh Kumar" 
+                  class="w-full px-4 py-2.5 rounded-lg bg-white border border-borderIvory text-deepNavy placeholder-slate-400 text-sm focus:border-brandOrange transition">
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-semibold text-deepNavy uppercase tracking-wider mb-1.5">
+                  Your Email Address <span class="text-red-600" aria-hidden="true">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="email"
+                  name="email" 
+                  required 
+                  autocomplete="email"
+                  placeholder="name@company.com" 
+                  class="w-full px-4 py-2.5 rounded-lg bg-white border border-borderIvory text-deepNavy placeholder-slate-400 text-sm focus:border-brandOrange transition">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="phone" class="block text-xs font-semibold text-deepNavy uppercase tracking-wider mb-1.5">
+                  Contact Phone / Mobile
+                </label>
+                <input 
+                  type="tel" 
+                  id="phone"
+                  name="phone" 
+                  autocomplete="tel"
+                  placeholder="+91 98100 00000" 
+                  class="w-full px-4 py-2.5 rounded-lg bg-white border border-borderIvory text-deepNavy placeholder-slate-400 text-sm focus:border-brandOrange transition">
+              </div>
+
+              <div>
+                <label for="practiceArea" class="block text-xs font-semibold text-deepNavy uppercase tracking-wider mb-1.5">
+                  What relates best to your inquiry?
+                </label>
+                <select 
+                  id="practiceArea"
+                  name="practiceArea" 
+                  class="w-full px-4 py-2.5 rounded-lg bg-white border border-borderIvory text-deepNavy text-sm focus:border-brandOrange transition">
+                  <option value="Trademarks">Trademarks &amp; Brand Protection</option>
+                  <option value="Patents">Patents &amp; Inventions</option>
+                  <option value="Anti-Counterfeiting">Anti-Counterfeiting &amp; Raids</option>
+                  <option value="Industrial Designs">Industrial Designs &amp; Packaging</option>
+                  <option value="Copyright">Copyright &amp; Software</option>
+                  <option value="Domain Disputes">Domain Name Disputes (INDRP/UDRP)</option>
+                  <option value="Corporate FDI">FDI, Contracts &amp; Setting up in India</option>
+                  <option value="Company Incorporation">Company Incorporation &amp; Compliance</option>
+                  <option value="Other">Other Legal Matter</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-semibold text-deepNavy uppercase tracking-wider mb-1.5">
+                Brief Summary of Your Matter <span class="text-red-600" aria-hidden="true">*</span>
+              </label>
+              <textarea 
+                id="message"
+                name="message" 
+                rows="4" 
+                required 
+                placeholder="Give us a short overview of your situation or what you need guidance on..." 
+                class="w-full px-4 py-2.5 rounded-lg bg-white border border-borderIvory text-deepNavy placeholder-slate-400 text-sm focus:border-brandOrange transition"></textarea>
+            </div>
+
+            <div class="flex items-start gap-2.5 pt-1">
+              <input 
+                type="checkbox" 
+                id="bciDisclaimerAck" 
+                required 
+                class="mt-1 w-4 h-4 rounded text-brandOrange border-slate-300 focus:ring-brandOrange">
+              <label for="bciDisclaimerAck" class="text-xs text-slateMuted leading-relaxed">
+                I am reaching out voluntarily to request information of my own accord, without any advertisement or solicitation by GroverLaw.
+              </label>
+            </div>
+
+            <button 
+              type="submit" 
+              class="btn-lift w-full sm:w-auto px-8 py-3.5 rounded-lg bg-brandOrange hover:bg-brandOrangeHover text-white font-semibold text-sm shadow-sm transition">
+              Send Message to Our Team
+            </button>
+          </form>
+
+          <div id="formAlert" class="hidden mt-4" role="alert"></div>
+
+          <!-- DPDP Act, 2023 Notice -->
+          <div class="mt-6 pt-4 border-t border-borderIvory text-xs text-slateMuted flex flex-col sm:flex-row justify-between gap-2">
+            <span>🔒 Confidential &amp; encrypted transmission.</span>
+            <span>Data collected solely to respond to your inquiry per the DPDP Act, 2023.</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER                                                                    -->
+  <!-- ========================================================================= -->
+  <footer class="bg-deepNavy text-slate-300 text-xs py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <!-- Firm Identity -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 bg-white p-2.5 rounded-xl border border-slate-200 inline-flex shadow-sm">
+            <img src="assets/images/emblem.png" alt="GroverLaw Emblem" class="h-10 w-10 object-contain shrink-0">
+            <div class="flex flex-col justify-center">
+              <img src="assets/images/wordmark.png" alt="GROVERLAW" class="h-5 w-auto object-contain">
+              <span class="text-[9px] tracking-widest text-slate-600 uppercase font-semibold mt-1">
+                Advocates &amp; Solicitors
+              </span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Advocates &amp; Solicitors. An independent Indian boutique law practice led by Vikram Grover, advising on Intellectual Property, Commercial Transactions, and Dispute Resolution.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-2">
+          <p class="text-white font-semibold text-xs uppercase tracking-wider mb-2">Practice Focus</p>
+          <ul class="space-y-1.5 text-slate-400">
+            <li><a href="#practice" class="hover:text-brandOrange transition">Brand Protection &amp; Trademarks</a></li>
+            <li><a href="#practice" class="hover:text-brandOrange transition">Patents &amp; Inventions</a></li>
+            <li><a href="#practice" class="hover:text-brandOrange transition">Anti-Counterfeiting &amp; Raids</a></li>
+            <li><a href="#practice" class="hover:text-brandOrange transition">Commercial Contracts &amp; FDI</a></li>
+            <li><a href="#practice" class="hover:text-brandOrange transition">Dispute Resolution &amp; Litigation</a></li>
+          </ul>
+        </div>
+
+        <!-- Chambers Locations -->
+        <div class="space-y-2">
+          <p class="text-white font-semibold text-xs uppercase tracking-wider mb-2">Chambers</p>
+          <div class="text-slate-400 space-y-2 leading-relaxed">
+            <div>
+              <strong class="text-slate-200 block">Delhi Chamber:</strong>
+              H 36 Green Park Extension, New Delhi 110016
+            </div>
+            <div>
+              <strong class="text-slate-200 block">Gurgaon Office:</strong>
+              A 592 Sushant Lok – I, Gurgaon, NCR 122009
+            </div>
+          </div>
+        </div>
+
+        <!-- Regulatory & DPDP Act Contact -->
+        <div class="space-y-3">
+          <p class="text-white font-semibold text-xs uppercase tracking-wider mb-2">Compliance &amp; Privacy</p>
+          <p class="text-slate-400 leading-relaxed">
+            Compliant with Bar Council of India Rule 36 and the Digital Personal Data Protection (DPDP) Act, 2023.
+          </p>
+          <button id="openDisclaimerBtn" class="text-brandOrange hover:underline text-xs block text-left">
+            Review BCI Disclaimer
+          </button>
+          <div class="pt-1">
+            <span class="text-slate-300 block text-[11px] font-medium">Careers / Recruitment:</span>
+            <a href="mailto:recruitment@groverlaw.in" class="text-brandOrange hover:underline">recruitment@groverlaw.in</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Regulatory Notice Paragraph -->
+      <div class="border-t border-slate-800 pt-6 text-[11px] text-slate-500 leading-relaxed text-justify">
+        <strong>Regulatory Notice under Bar Council of India Rules:</strong> This website is maintained solely for informational purposes to provide basic facts about our practice areas and qualifications. It is not intended to advertise or solicit legal work. Viewing this website or contacting us does not create an advocate-client relationship. If you require formal advice on specific legal matters, you should engage independent counsel.
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-slate-800/60 pt-4 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-xs gap-2">
+        <p>&copy; 1996–2026 GroverLaw, Advocates &amp; Solicitors. All rights reserved.</p>
+        <p>New Delhi &amp; Gurgaon (NCR), India</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- LIGHTWEIGHT, DEPENDENCY-FREE MOTION JAVASCRIPT ENGINE                      -->
+  <!-- ========================================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initScrollElevation();
+      initSmoothCountUp();
+      initScrollRevealObserver();
+    });
+
+    /**
+     * ANIMATION 6: Header Elevation Shadow on Scroll
+     */
+    function initScrollElevation() {
+      const header = document.getElementById('mainHeader');
+      if (!header) return;
+
+      const handleScroll = () => {
+        if (window.scrollY > 20) {
+          header.classList.add('header-scrolled');
+        } else {
+          header.classList.remove('header-scrolled');
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll(); // Initial check
+    }
+
+    /**
+     * ANIMATION 4: Stats Number Smooth Count-Up (Single Execution on Viewport Entry)
+     */
+    function initSmoothCountUp() {
+      // Respect user's motion preferences
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const countTargets = document.querySelectorAll('.count-up-target');
+      const statsRow = document.getElementById('statsRow');
+
+      if (!statsRow || !countTargets.length) return;
+
+      // If user prefers reduced motion, set final values immediately
+      if (prefersReducedMotion) {
+        countTargets.forEach(el => {
+          el.textContent = el.getAttribute('data-target');
+        });
+        return;
+      }
+
+      let hasCounted = false;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !hasCounted) {
+            hasCounted = true;
+            countTargets.forEach(animateCounter);
+            observer.unobserve(statsRow);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(statsRow);
+
+      function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'), 10);
+        const duration = 1200; // 1.2s smooth count
+        const startTime = performance.now();
+
+        function updateNumber(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          // Easing function: easeOutExpo for a silky landing
+          const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+          const currentVal = Math.floor(easeOut * target);
+
+          element.textContent = currentVal;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+          } else {
+            element.textContent = target; // Ensure exact final value
+          }
+        }
+
+        requestAnimationFrame(updateNumber);
+      }
+    }
+
+    /**
+     * ANIMATION 8: Scroll Reveals for Below-the-Fold Sections
+     */
+    function initScrollRevealObserver() {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealItems = document.querySelectorAll('.reveal-on-scroll');
+
+      if (prefersReducedMotion || !revealItems.length) {
+        revealItems.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target); // Animate only once
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealItems.forEach(el => revealObserver.observe(el));
+    }
+  </script>
+
+  <!-- Main JavaScript Engine (BCI Modal, Form Validation, Honeypot & CSRF) -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

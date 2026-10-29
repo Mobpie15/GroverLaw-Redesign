@@ -1,0 +1,92 @@
+﻿@font-face {
+    font-family: 'Georgia.TTF';
+    src: url('font/Walkway Bold.ttf');
+    src: url('font/georgiab.ttf');
+    src: url('font/georgiai.ttf');
+    src: url('font/georgiaz.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.text
+ {
+	font-family:Georgia;
+	font-size: 13px;
+	color: #534741;
+	font-weight:bold;
+}
+.text_itl
+ { 
+	font-family:Georgia;
+	font-size: 13px;
+	color: #534741;
+	font-weight:bold;
+  font-style: italic; }
+
+.Right_menu
+ {
+	font-family:Georgia;
+	font-size: 12px;
+	color: #534741;
+	font-weight:bold;
+}
+.Right_Colored
+ {
+	font-family:Georgia;
+	font-size: 14px;
+	color: #FF6600;
+	font-weight:bold;
+}
+.Right_Colored1
+ {
+	font-family:Georgia;
+	font-size: 16px;
+	color: #FF6600;
+	font-weight:bold;
+}
+.text_css
+{
+	font-family:Georgia;
+	font-size: 13px;
+	color: #534741;
+	font-weight:bold;
+}
+.text_Wht
+{
+	font-family:Georgia;
+	font-size: 15px;
+	color: #FFFFFF;
+	font-weight:bold;
+}
+
+
+.links {
+	font-family:Georgia;
+	font-size: 14px;
+	font-weight: bold;
+	color: #534741;
+	
+	}
+
+a:visited {
+  font-family:Georgia;
+	font-size: 14px;
+	font-weight: bold;
+	color: #534741;
+}
+
+a:hover {
+	font-family:Georgia;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF6600;
+	text-decoration: none;
+}
+
+a:active {
+	font-family:Georgia;
+	font-size: 14px;
+	font-weight: bold;
+	color: #534741;
+	
+}

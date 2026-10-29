@@ -1,0 +1,166 @@
+/* Groverlaw - Modern Legal Counsel Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+:root {
+  --primary-deep: #081225;
+  --primary-navy: #0f1c3f;
+  --primary-slate: #1e293b;
+  --accent-gold: #c59b27;
+  --accent-gold-light: #dfb747;
+  --accent-amber: #e65100;
+  --text-primary: #0f172a;
+  --text-muted: #64748b;
+  --bg-subtle: #f8fafc;
+  --border-gold: rgba(197, 155, 39, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-serif-heading {
+  font-family: 'Cinzel', Georgia, serif;
+  letter-spacing: 0.03em;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #081225;
+}
+::-webkit-scrollbar-thumb {
+  background: #c59b27;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dfb747;
+}
+
+/* Glassmorphism Navbar */
+.nav-glass {
+  background: rgba(8, 18, 37, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(197, 155, 39, 0.25);
+}
+
+/* Gold Gradient Utilities */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #f9e29d 0%, #c59b27 50%, #997214 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #c59b27 0%, #a47c1b 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(145deg, #0b152d 0%, #050a17 100%);
+}
+
+/* Card Styling & Hover Effects */
+.legal-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.legal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px -10px rgba(8, 18, 37, 0.12);
+  border-color: rgba(197, 155, 39, 0.5);
+}
+
+.legal-card-dark {
+  background: #0f1c3f;
+  border: 1px solid rgba(197, 155, 39, 0.2);
+  transition: all 0.3s ease;
+}
+
+.legal-card-dark:hover {
+  transform: translateY(-4px);
+  border-color: rgba(197, 155, 39, 0.6);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Subtle Hero Grid */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(197, 155, 39, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(197, 155, 39, 0.05) 1px, transparent 1px);
+}
+
+/* Tab animations */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Accordion transition */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+}
+
+.accordion-content.open {
+  max-height: 1200px;
+}
+
+/* Bar Council Disclaimer Modal */
+#bciModal {
+  backdrop-filter: blur(8px);
+}
+
+/* Subtle pulse for dual qualified badge */
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(197, 155, 39, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(197, 155, 39, 0);
+  }
+}
+
+.badge-pulse {
+  animation: goldPulse 3s infinite;
+}
+
+/* Shared, subtle section entrance used across the supporting pages */
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 620ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.motion-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
