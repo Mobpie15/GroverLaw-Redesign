@@ -1,0 +1,21 @@
+{
+  "name": "GROVERLAW Advocates & Solicitors",
+  "short_name": "GROVERLAW",
+  "description": "Chambers of Vikram Grover, Advocate & Solicitor. Intellectual Property, Patent Prosecution, Brand Protection Raids, and Cross-Border FDI in India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#EB6A1D",
+  "icons": [
+    {
+      "src": "assets/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

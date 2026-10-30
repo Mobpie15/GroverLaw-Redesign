@@ -1,0 +1,60 @@
+# ==============================================================================
+# GROVERLAW ADVOCATES & SOLICITORS — ROBOTS DIRECTIVES
+# Authoritative Web & AI Agent Crawling Policy
+# Canonical: https://groverlaw.in
+# ==============================================================================
+
+# Default Search Engine Crawlers
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /legacy_source_archive/
+
+# OpenAI Search & Retrieval Agents (ChatGPT, SearchGPT, GPTBot)
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude Retrieval Agent
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+# Perplexity AI Search Crawler
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
+# Google Gemini & Search Extended Crawler
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+# Apple Intelligence & Search Crawler
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft Bing & Copilot
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Sitemaps & AI Knowledge Manifests
+Sitemap: https://groverlaw.in/sitemap.xml
+# AI Search Engine Direct Ingestion Manifest
+# Reference: https://llmstxt.org/
+# Direct Markdown Dossier for LLM indexing:
+# https://groverlaw.in/llms.txt

@@ -1,166 +1,730 @@
-/* Groverlaw - Modern Legal Counsel Stylesheet */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+/* ==========================================================================
+   GROVERLAW — BRAND THEME: WHITE / SLATE GREY / HERITAGE ORANGE
+   Typography: Cinzel (Headlines) & Plus Jakarta Sans (Body)
+   Zero-AI-Slop: Pure SVG vector icons, crisp typography, 60fps Three.js globe.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary-deep: #081225;
-  --primary-navy: #0f1c3f;
-  --primary-slate: #1e293b;
-  --accent-gold: #c59b27;
-  --accent-gold-light: #dfb747;
-  --accent-amber: #e65100;
-  --text-primary: #0f172a;
-  --text-muted: #64748b;
-  --bg-subtle: #f8fafc;
-  --border-gold: rgba(197, 155, 39, 0.3);
+  /* Bespoke White / Slate / Heritage Orange Color System */
+  --bg-canvas: #FAFAFA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #F1F5F9;
+
+  --slate-darkest: #0F172A;
+  --slate-dark: #1E293B;
+  --slate-body: #334155;
+  --slate-muted: #64748B;
+  --slate-border: #E2E8F0;
+
+  --brand-orange: #EB6A1D;
+  --brand-orange-hover: #D45A13;
+  --brand-orange-light: rgba(235, 106, 29, 0.08);
+  --brand-orange-glow: rgba(235, 106, 29, 0.25);
+
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* {
+/* Base Setup */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-canvas);
+  color: var(--slate-darkest);
+  -webkit-font-smoothing: antialiased;
 }
 
-.font-serif-heading {
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-canvas);
+  color: var(--slate-darkest);
+  overflow-x: hidden;
+}
+
+/* Typography Classes */
+.font-cinzel {
   font-family: 'Cinzel', Georgia, serif;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
-.font-editorial {
-  font-family: 'Playfair Display', Georgia, serif;
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Custom Scrollbar */
+/* Custom Executive Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #081225;
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c59b27;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #dfb747;
+  background: var(--brand-orange);
 }
 
-/* Glassmorphism Navbar */
-.nav-glass {
-  background: rgba(8, 18, 37, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(197, 155, 39, 0.25);
+/* Text Selection */
+::selection {
+  background: rgba(235, 106, 29, 0.2);
+  color: #0F172A;
 }
 
-/* Gold Gradient Utilities */
-.text-gradient-gold {
-  background: linear-gradient(135deg, #f9e29d 0%, #c59b27 50%, #997214 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.bg-gradient-gold {
-  background: linear-gradient(135deg, #c59b27 0%, #a47c1b 100%);
-}
-
-.bg-gradient-dark {
-  background: linear-gradient(145deg, #0b152d 0%, #050a17 100%);
-}
-
-/* Card Styling & Hover Effects */
-.legal-card {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-}
-
-.legal-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 30px -10px rgba(8, 18, 37, 0.12);
-  border-color: rgba(197, 155, 39, 0.5);
-}
-
-.legal-card-dark {
-  background: #0f1c3f;
-  border: 1px solid rgba(197, 155, 39, 0.2);
-  transition: all 0.3s ease;
-}
-
-.legal-card-dark:hover {
-  transform: translateY(-4px);
-  border-color: rgba(197, 155, 39, 0.6);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
-}
-
-/* Subtle Hero Grid */
-.bg-grid-pattern {
+/* Architectural Subtle Dot Grid */
+.bg-subtle-grid {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(197, 155, 39, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(197, 155, 39, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
 }
 
-/* Tab animations */
-.tab-content {
-  display: none;
+/* Loading Screen Styles */
+#loadingScreen {
+  transition: opacity 0.65s var(--ease-spring), transform 0.65s var(--ease-spring);
+}
+
+.logo-block-item {
+  transition: transform 0.4s var(--ease-spring), opacity 0.35s ease, filter 0.35s ease;
+  will-change: transform, opacity, filter;
+}
+
+/* Brand Buttons */
+.btn-orange-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--brand-orange);
+  color: #FFFFFF;
+  font-weight: 700;
+  border: 1px solid var(--brand-orange);
+  box-shadow: 0 4px 14px -1px var(--brand-orange-glow);
+  transition: all 0.25s var(--ease-spring);
+  cursor: pointer;
+}
+
+.btn-orange-primary:hover {
+  background-color: var(--brand-orange-hover);
+  border-color: var(--brand-orange-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -2px rgba(235, 106, 29, 0.45);
+}
+
+.btn-white-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+  color: var(--slate-dark);
+  font-weight: 600;
+  border: 1px solid var(--slate-border);
+  box-shadow: 0 2px 6px -1px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s var(--ease-spring);
+}
+
+.btn-white-secondary:hover {
+  background-color: #F8FAFC;
+  border-color: #94A3B8;
+  color: var(--slate-darkest);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.1);
+}
+
+/* Nav Link Clean Styling & Underline Hover */
+.nav-link-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate-dark);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  padding: 0.25rem 0;
+}
+
+.nav-link-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--brand-orange);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.2s var(--ease-spring);
+  border-radius: 1px;
+}
+
+.nav-link-item:hover,
+.nav-link-item.active {
+  color: var(--brand-orange);
+}
+
+.nav-link-item:hover::after,
+.nav-link-item.active::after {
+  transform: scaleX(1);
+}
+
+/* 3D Globe Screen Projected Badges */
+.globe-projected-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  will-change: transform, opacity;
+}
+
+/* Smooth Entrance Transition for Main UI */
+#mainNavbar, #globeContainer {
+  transition: opacity 0.7s var(--ease-spring), transform 0.7s var(--ease-spring);
+}
+
+/* 1-by-1 Sequential Staggered Entrance for Hero Left Content */
+.hero-stagger-item {
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transform: translateY(24px);
+  transition: opacity 0.75s var(--ease-spring), transform 0.75s var(--ease-spring);
+  will-change: opacity, transform;
 }
 
-.tab-content.active {
-  display: block;
-  opacity: 1;
-}
-
-/* Accordion transition */
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease-out;
-}
-
-.accordion-content.open {
-  max-height: 1200px;
-}
-
-/* Bar Council Disclaimer Modal */
-#bciModal {
-  backdrop-filter: blur(8px);
-}
-
-/* Subtle pulse for dual qualified badge */
-@keyframes goldPulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(197, 155, 39, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 8px rgba(197, 155, 39, 0);
-  }
-}
-
-.badge-pulse {
-  animation: goldPulse 3s infinite;
-}
-
-/* Shared, subtle section entrance used across the supporting pages */
-.motion-reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 620ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.motion-reveal.is-visible {
+body.hero-active .hero-stagger-item {
   opacity: 1;
   transform: translateY(0);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .motion-reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
+body.hero-active .hero-delay-1 { transition-delay: 0.05s; }
+body.hero-active .hero-delay-2 { transition-delay: 0.15s; }
+body.hero-active .hero-delay-3 { transition-delay: 0.25s; }
+body.hero-active .hero-delay-4 { transition-delay: 0.35s; }
+body.hero-active .hero-delay-5 { transition-delay: 0.45s; }
+body.hero-active .hero-delay-6 { transition-delay: 0.52s; }
+body.hero-active .hero-delay-7 { transition-delay: 0.59s; }
+body.hero-active .hero-delay-8 { transition-delay: 0.66s; }
+
+/* Stat Counters: Tabular Digits & Zero Layout Shift */
+.stat-counter {
+  font-variant-numeric: tabular-nums lining-nums;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* =========================================================================
+   SCROLL REVEAL STAGGER ANIMATIONS (SMOOTH 60FPS VIEWPORT ENTRANCE)
+   ========================================================================= */
+.scroll-reveal {
+  opacity: 1;
+}
+
+.scroll-reveal-item {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s var(--ease-spring), transform 0.75s var(--ease-spring);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-item.is-visible.stagger-1 { transition-delay: 0.08s; }
+.scroll-reveal-item.is-visible.stagger-2 { transition-delay: 0.18s; }
+.scroll-reveal-item.is-visible.stagger-3 { transition-delay: 0.28s; }
+.scroll-reveal-item.is-visible.stagger-4 { transition-delay: 0.38s; }
+.scroll-reveal-item.is-visible.stagger-5 { transition-delay: 0.48s; }
+.scroll-reveal-item.is-visible.stagger-6 { transition-delay: 0.58s; }
+.scroll-reveal-item.is-visible.stagger-7 { transition-delay: 0.68s; }
+.scroll-reveal-item.is-visible.stagger-8 { transition-delay: 0.78s; }
+
+/* Luxury Card Hover Micro-Interactions */
+.luxury-hover-card {
+  transition: all 0.3s var(--ease-spring);
+  will-change: transform, box-shadow, border-color;
+}
+
+.luxury-hover-card:hover {
+  transform: translateY(-4px);
+  border-color: #CBD5E1;
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================================================
+   CLIENT TRIAGE TERMINAL INTERACTIVE TABS (ULTRA-SMOOTH TRANSITIONS)
+   ========================================================================= */
+.triage-tab-btn {
+  position: relative;
+  transition: all 0.28s var(--ease-spring);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.triage-tab-btn:hover {
+  color: var(--brand-orange);
+  background-color: rgba(235, 106, 29, 0.02);
+}
+
+.triage-tab-btn.active {
+  color: var(--brand-orange);
+  border-bottom-color: var(--brand-orange);
+  background-color: rgba(235, 106, 29, 0.05);
+}
+
+.triage-panel {
+  display: none;
+}
+
+.triage-panel.active {
+  display: block;
+  animation: triagePanelEnter 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+.triage-panel.triage-leaving {
+  display: block;
+  animation: triagePanelLeave 0.16s cubic-bezier(0.4, 0, 1, 1) forwards;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes triagePanelEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.988);
+    filter: blur(5px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes triagePanelLeave {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.99);
+    filter: blur(3px);
+  }
+}
+
+/* Staggered micro-delays for internal content blocks */
+.triage-panel.active .triage-left-col {
+  animation: triageChildFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both;
+}
+
+.triage-panel.active .triage-steps-grid {
+  animation: triageChildFadeIn 0.48s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
+.triage-panel.active .triage-right-card {
+  animation: triageChildFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+@keyframes triageChildFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================================
+   DARK SOVEREIGN VAULT STYLES (BLOCK-BY-BLOCK SEQUENTIAL CASCADE)
+   ========================================================================= */
+.vault-discipline-card {
+  opacity: 0;
+  transform: translateY(32px) scale(0.97);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.7);
+  will-change: opacity, transform;
+}
+
+.vault-grid.is-visible .vault-discipline-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.vault-grid.is-visible .vault-card-step-1 { transition-delay: 0.10s; }
+.vault-grid.is-visible .vault-card-step-2 { transition-delay: 0.26s; }
+.vault-grid.is-visible .vault-card-step-3 { transition-delay: 0.42s; }
+.vault-grid.is-visible .vault-card-step-4 { transition-delay: 0.58s; }
+.vault-grid.is-visible .vault-card-step-5 { transition-delay: 0.74s; }
+.vault-grid.is-visible .vault-card-step-6 { transition-delay: 0.90s; }
+
+.vault-grid.is-visible .vault-discipline-card:hover {
+  border-color: var(--brand-orange);
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6), 0 0 24px -4px rgba(235, 106, 29, 0.2);
+}
+
+.vault-numeral {
+  transition: color 0.3s ease;
+}
+
+.vault-discipline-card:hover .vault-numeral {
+  color: var(--brand-orange);
+}
+
+/* =========================================================================
+   COMPARATIVE ADVANTAGE LEDGER (STEP-BY-STEP SEQUENTIAL ROW REVEAL)
+   ========================================================================= */
+.advantage-row {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease;
+  will-change: opacity, transform;
+}
+
+.advantage-table.is-visible .advantage-row {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.advantage-table.is-visible .advantage-row.step-1 {
+  transition-delay: 0.16s;
+}
+
+.advantage-table.is-visible .advantage-row.step-2 {
+  transition-delay: 0.34s;
+}
+
+.advantage-table.is-visible .advantage-row.step-3 {
+  transition-delay: 0.52s;
+}
+
+.advantage-table.is-visible .advantage-row.step-4 {
+  transition-delay: 0.70s;
+}
+
+.advantage-row:hover {
+  background-color: rgba(235, 106, 29, 0.035);
+}
+
+/* =========================================================================
+   CHRONOLOGICAL PRECEDENTS TIMELINE (STEP-BY-STEP ORCHESTRATION)
+   ========================================================================= */
+.timeline-stepper {
+  position: relative;
+}
+
+.timeline-step {
+  position: relative;
+}
+
+.timeline-connector-track {
+  position: absolute;
+  left: 5px;
+  top: 18px;
+  bottom: -6px;
+  width: 2px;
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.timeline-connector-fill {
+  width: 100%;
+  height: 0;
+  position: relative;
+  background-color: var(--brand-orange);
+  will-change: height;
+}
+
+.timeline-photon-head {
+  position: absolute;
+  bottom: -4px;
+  left: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: var(--brand-orange);
+  box-shadow: 0 0 10px #EB6A1D, 0 0 4px #FFFFFF;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 4;
+  will-change: opacity;
+}
+
+.timeline-dot-anchor {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  will-change: transform, opacity;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-dot-ping {
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.timeline-content {
+  will-change: transform, opacity;
+}
+
+.timeline-step:hover .timeline-dot {
+  transform: scale(1.18) !important;
+  transition: transform 0.22s var(--ease-spring);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-dot,
+  .timeline-content {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .timeline-connector-fill {
+    height: 100% !important;
+    transition: none !important;
+  }
+  .timeline-photon-head,
+  .timeline-dot-ping {
+    display: none !important;
+  }
+}
+
+/* =========================================================================
+   LUXURY BESPOKE PRACTICE MATTER CUSTOM SELECT DROPDOWN
+   ========================================================================= */
+.custom-select-wrapper {
+  position: relative;
+  user-select: none;
+}
+
+.custom-select-trigger {
+  cursor: pointer;
+  background-color: #FFFFFF;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.custom-select-trigger:hover {
+  border-color: #94A3B8;
+}
+
+.custom-select-wrapper.is-open .custom-select-trigger,
+.custom-select-trigger:focus-visible {
+  border-color: var(--brand-orange) !important;
+  box-shadow: 0 0 0 3px rgba(235, 106, 29, 0.14) !important;
+  outline: none;
+}
+
+.custom-select-chevron {
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.custom-select-wrapper.is-open .custom-select-chevron {
+  transform: rotate(180deg);
+  color: var(--brand-orange);
+}
+
+#customSelectDropdown {
+  will-change: transform, opacity;
+  box-shadow: 0 20px 40px -4px rgba(15, 23, 42, 0.16),
+              0 0 0 1px rgba(226, 232, 240, 0.9);
+}
+
+.custom-select-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-size: 0.8125rem;
+  color: #334155;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 2px 4px;
+  transition: all 0.15s ease;
+}
+
+.custom-select-option:hover,
+.custom-select-option.is-highlighted {
+  background-color: rgba(235, 106, 29, 0.06);
+  color: var(--brand-orange);
+  padding-left: 17px;
+}
+
+.custom-select-option.is-selected {
+  background-color: rgba(235, 106, 29, 0.1);
+  color: var(--brand-orange);
+  font-weight: 700;
+}
+
+.custom-select-option .custom-option-check {
+  display: inline-flex;
+  color: var(--brand-orange);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.custom-select-option .custom-option-check.hidden {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.custom-select-option.is-selected .custom-option-check {
+  display: inline-flex !important;
+  opacity: 1 !important;
+  transform: scale(1);
+}
+
+
+/* =========================================================================
+   MOBILE RESPONSIVENESS & TOUCH POLISH ENHANCEMENTS
+   ========================================================================= */
+
+/* Prevent iOS Safari 16px auto-zoom on form inputs */
+@media screen and (max-width: 640px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Minimum 44px touch targets on touch devices */
+@media (pointer: coarse) {
+  .btn-orange-primary,
+  .btn-white-secondary,
+  .triage-tab-btn,
+  .custom-select-trigger,
+  #countryCodeTrigger,
+  .country-option,
+  .custom-select-option,
+  #mobileMenuBtn {
+    min-height: 44px;
+  }
+}
+
+/* Touch-action and tap highlight hygiene */
+button, a, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================================
+   LUXURY EDITORIAL FAQ ACCORDION (SEO & AI KNOWLEDGE ANCHOR)
+   ========================================================================= */
+.accordion-item {
+  border-bottom: 1px solid var(--slate-border);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--slate-darkest);
+  transition: color 0.2s ease;
+  user-select: none;
+}
+
+@media (min-width: 640px) {
+  .accordion-header {
+    font-size: 1.15rem;
+    padding: 1.5rem 0;
+  }
+}
+
+.accordion-header:hover {
+  color: var(--brand-orange);
+}
+
+.accordion-item.is-open .accordion-header {
+  color: var(--brand-orange);
+}
+
+.accordion-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--slate-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s var(--ease-spring), border-color 0.2s ease, background-color 0.2s ease;
+  color: var(--slate-muted);
+}
+
+.accordion-header:hover .accordion-icon,
+.accordion-item.is-open .accordion-icon {
+  border-color: var(--brand-orange);
+  background-color: var(--brand-orange-light);
+  color: var(--brand-orange);
+}
+
+.accordion-item.is-open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.3s ease;
+  color: var(--slate-body);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.accordion-item.is-open .accordion-body {
+  max-height: 400px;
+  opacity: 1;
+  padding-bottom: 1.5rem;
 }

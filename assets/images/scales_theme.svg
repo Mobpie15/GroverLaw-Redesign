@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" class="w-full h-auto max-w-[460px] select-none" aria-label="Groverlaw Advocates & Solicitors - Chambers Emblem">
+  <defs>
+    <!-- Brand Heritage Orange Gradient -->
+    <linearGradient id="glOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FA8C16" />
+      <stop offset="50%" stop-color="#EB6A1D" />
+      <stop offset="100%" stop-color="#C85310" />
+    </linearGradient>
+
+    <!-- Deep Midnight Slate Gradient (Matches Vikram Grover dossier card) -->
+    <linearGradient id="glSlateGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#0B1120" />
+    </linearGradient>
+
+    <!-- Crossbeam Heritage Gradient -->
+    <linearGradient id="glBeamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EB6A1D" />
+      <stop offset="25%" stop-color="#FA8C16" />
+      <stop offset="50%" stop-color="#FDE68A" />
+      <stop offset="75%" stop-color="#FA8C16" />
+      <stop offset="100%" stop-color="#EB6A1D" />
+    </linearGradient>
+
+    <!-- Pan Bowl Interior Depth -->
+    <radialGradient id="glPanDepth" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="65%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#050811" />
+    </radialGradient>
+
+    <!-- Pan Bowl Exterior Curve -->
+    <linearGradient id="glPanExterior" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EB6A1D" />
+      <stop offset="20%" stop-color="#1E293B" />
+      <stop offset="85%" stop-color="#0B1120" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <!-- Soft Ambient Aura for Hero Section -->
+    <radialGradient id="glAmbientAura" cx="50%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#EB6A1D" stop-opacity="0.08" />
+      <stop offset="50%" stop-color="#0F172A" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Drop Shadow for Dimensional Realism -->
+    <filter id="glShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0B1120" flood-opacity="0.2" />
+    </filter>
+
+    <filter id="glGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Backdrop Aura -->
+  <circle cx="250" cy="215" r="195" fill="url(#glAmbientAura)" />
+
+  <!-- Classical Architectural Seal Rings (Subtle Sovereign Watermark) -->
+  <g opacity="0.4" stroke-dasharray="3 7">
+    <circle cx="250" cy="215" r="175" fill="none" stroke="#CBD5E1" stroke-width="0.8" />
+    <circle cx="250" cy="215" r="145" fill="none" stroke="#EB6A1D" stroke-width="0.6" stroke-dasharray="2 6" opacity="0.6" />
+    <circle cx="250" cy="215" r="110" fill="none" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="1 8" />
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- STATIC BASE & COLUMN (Midnight Slate with Heritage Orange Trims)          -->
+  <!-- ========================================================================= -->
+  <g id="scaleStaticStructure" filter="url(#glShadow)">
+    <!-- Base Plinth Tier 1 (Ground) -->
+    <rect x="145" y="386" width="210" height="14" rx="4" fill="url(#glSlateGrad)" stroke="#1E293B" stroke-width="1" />
+    <line x1="150" y1="387" x2="350" y2="387" stroke="#EB6A1D" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- Base Plinth Tier 2 (Stepped Bronze Plate) -->
+    <rect x="175" y="372" width="150" height="14" rx="3" fill="url(#glSlateGrad)" stroke="#334155" stroke-width="0.8" />
+    <line x1="180" y1="373" x2="320" y2="373" stroke="#FDE68A" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+
+    <!-- Base Plinth Tier 3 (Molding Collar) -->
+    <rect x="205" y="362" width="90" height="10" rx="3" fill="url(#glOrangeGrad)" />
+
+    <!-- Central Fluted Neoclassical Column (Midnight Slate with Orange Fluting) -->
+    <path d="M 242 160 L 258 160 L 256 362 L 244 362 Z" fill="url(#glSlateGrad)" stroke="#1E293B" stroke-width="0.8" />
+    <!-- Architectural Fluting Lines -->
+    <line x1="246" y1="165" x2="247" y2="358" stroke="#EB6A1D" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+    <line x1="250" y1="165" x2="250" y2="358" stroke="#FDE68A" stroke-width="1.2" stroke-linecap="round" opacity="0.9" />
+    <line x1="254" y1="165" x2="253" y2="358" stroke="#EB6A1D" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+
+    <!-- Column Decorative Rings -->
+    <rect x="239" y="235" width="22" height="6" rx="3" fill="url(#glOrangeGrad)" />
+    <rect x="240" y="305" width="20" height="5" rx="2.5" fill="url(#glOrangeGrad)" />
+
+    <!-- Column Capital at Neck -->
+    <path d="M 236 156 L 264 156 L 259 164 L 241 164 Z" fill="url(#glOrangeGrad)" />
+
+    <!-- Neoclassical Finial / Sword Pommel -->
+    <path d="M 250 82 L 258 100 L 250 108 L 242 100 Z" fill="url(#glSlateGrad)" stroke="#EB6A1D" stroke-width="1" />
+    <circle cx="250" cy="80" r="3.5" fill="#FFA940" />
+    <line x1="250" y1="108" x2="250" y2="140" stroke="url(#glSlateGrad)" stroke-width="4" stroke-linecap="round" />
+    <line x1="250" y1="108" x2="250" y2="140" stroke="#EB6A1D" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- Equilibrium Gauge Arc & Center Balance Marker -->
+    <path d="M 230 120 A 24 24 0 0 1 270 120" fill="none" stroke="#94A3B8" stroke-width="1.2" stroke-linecap="round" />
+    <line x1="250" y1="112" x2="250" y2="117" stroke="#EB6A1D" stroke-width="2" stroke-linecap="round" />
+    <line x1="237" y1="116" x2="239" y2="120" stroke="#94A3B8" stroke-width="1" />
+    <line x1="263" y1="116" x2="261" y2="120" stroke="#94A3B8" stroke-width="1" />
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TRUE KINEMATICALLY RIGGED SCALES MECHANISM (ANIMATED)                      -->
+  <!-- Fulcrum Pivot Point: (250, 150)                                           -->
+  <!-- Left Hook Tip: Local (-155, 0) -> World (95, 150)                         -->
+  <!-- Right Hook Tip: Local (+155, 0) -> World (405, 150)                       -->
+  <!-- ========================================================================= -->
+  <g id="scaleKinematicBeam" class="scale-beam-rig">
+
+    <!-- Precision Plumb Needle (Moves with beam) -->
+    <polygon points="248.5,150 250,104 251.5,150" fill="#EB6A1D" stroke="#FEF3C7" stroke-width="0.5" filter="url(#glGlow)" />
+    <circle cx="250" cy="103" r="2" fill="#FFFFFF" />
+
+    <!-- Main Balance Crossbeam (Heritage Orange with Slate Spine) -->
+    <!-- Lower Curved Body -->
+    <path d="M 250 148 C 205 142 140 138 95 150 C 95 153 140 146 250 152 C 360 146 405 153 405 150 C 360 138 295 142 250 148 Z" 
+          fill="url(#glBeamGrad)" stroke="#C85310" stroke-width="0.8" />
+
+    <!-- Inner Spine Contrast Line (Midnight Slate) -->
+    <path d="M 245 150 C 200 144 145 141 105 150" fill="none" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+    <path d="M 255 150 C 300 144 355 141 395 150" fill="none" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+
+    <!-- Decorative Scroll Brackets -->
+    <path d="M 190 144 C 175 132 135 136 105 148" fill="none" stroke="#EB6A1D" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 310 144 C 325 132 365 136 395 148" fill="none" stroke="#EB6A1D" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- Left Hook Ring on Beam (Center at 95, 150) -->
+    <circle cx="95" cy="150" r="7.5" fill="none" stroke="#0F172A" stroke-width="2.5" />
+    <circle cx="95" cy="150" r="5" fill="none" stroke="#EB6A1D" stroke-width="1.8" />
+    <circle cx="95" cy="150" r="2.5" fill="#0F172A" />
+
+    <!-- Right Hook Ring on Beam (Center at 405, 150) -->
+    <circle cx="405" cy="150" r="7.5" fill="none" stroke="#0F172A" stroke-width="2.5" />
+    <circle cx="405" cy="150" r="5" fill="none" stroke="#EB6A1D" stroke-width="1.8" />
+    <circle cx="405" cy="150" r="2.5" fill="#0F172A" />
+
+    <!-- Central Fulcrum Medallion (Center at 250, 150) -->
+    <circle cx="250" cy="150" r="16" fill="url(#glSlateGrad)" stroke="#334155" stroke-width="1.5" />
+    <circle cx="250" cy="150" r="11" fill="none" stroke="#EB6A1D" stroke-width="1.8" />
+    <circle cx="250" cy="150" r="6" fill="url(#glOrangeGrad)" filter="url(#glGlow)" />
+    <circle cx="250" cy="150" r="2" fill="#FFFFFF" />
+
+    <!-- ===================================================================== -->
+    <!-- LEFT PAN ASSEMBLY: RIGGED AT LOCAL HOOK (95, 150)                     -->
+    <!-- Counter-rotates around (0, 0) so top of chains NEVER detaches!        -->
+    <!-- ===================================================================== -->
+    <g transform="translate(95, 150)">
+      <g id="scaleLeftCounterGroup" class="scale-counter-left">
+        <!-- Top Shackle / Ring that interlinks through the beam ring -->
+        <circle cx="0" cy="0" r="4.5" fill="none" stroke="#EB6A1D" stroke-width="1.5" />
+        <circle cx="0" cy="0" r="2" fill="#0F172A" />
+
+        <!-- Suspension Chains (Midnight Slate with Orange Link Dots) -->
+        <!-- Center-rear line -->
+        <line x1="0" y1="4" x2="0" y2="114" stroke="#475569" stroke-width="1" stroke-dasharray="2 3" opacity="0.7" />
+        <!-- Front-left line -->
+        <line x1="0" y1="4" x2="-44" y2="116" stroke="#1E293B" stroke-width="1.6" stroke-linecap="round" />
+        <line x1="0" y1="4" x2="-44" y2="116" stroke="#EB6A1D" stroke-width="1.2" stroke-dasharray="3 4" stroke-linecap="round" />
+        <!-- Front-right line -->
+        <line x1="0" y1="4" x2="44" y2="116" stroke="#1E293B" stroke-width="1.6" stroke-linecap="round" />
+        <line x1="0" y1="4" x2="44" y2="116" stroke="#EB6A1D" stroke-width="1.2" stroke-dasharray="3 4" stroke-linecap="round" />
+
+        <!-- Weighing Bowl Underside (Midnight Slate with Warm Orange Glow) -->
+        <path d="M -46 116 Q 0 162 46 116 Q 0 128 -46 116 Z" fill="url(#glPanExterior)" stroke="#0B1120" stroke-width="1" filter="url(#glShadow)" />
+
+        <!-- Weighing Bowl Interior Depth -->
+        <ellipse cx="0" cy="116" rx="46" ry="11" fill="url(#glPanDepth)" stroke="#0F172A" stroke-width="1.5" />
+
+        <!-- Polished Heritage Orange Rim Lip -->
+        <ellipse cx="0" cy="116" rx="46" ry="11" fill="none" stroke="url(#glOrangeGrad)" stroke-width="2" />
+        <ellipse cx="0" cy="116" rx="42" ry="9" fill="none" stroke="#FDE68A" stroke-width="0.8" opacity="0.85" />
+
+        <!-- Engraved Legal Seal Inside Pan (Delhi High Court IPD) -->
+        <g transform="translate(0, 116)">
+          <ellipse cx="0" cy="0" rx="28" ry="5.5" fill="#0B1120" stroke="#EB6A1D" stroke-width="0.8" />
+          <text x="0" y="2" text-anchor="middle" font-family="'Cinzel', Georgia, serif" font-size="5" font-weight="700" fill="#FDE68A" letter-spacing="1">DELHI • 1996</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ===================================================================== -->
+    <!-- RIGHT PAN ASSEMBLY: RIGGED AT LOCAL HOOK (405, 150)                   -->
+    <!-- Counter-rotates around (0, 0) so top of chains NEVER detaches!        -->
+    <!-- ===================================================================== -->
+    <g transform="translate(405, 150)">
+      <g id="scaleRightCounterGroup" class="scale-counter-right">
+        <!-- Top Shackle / Ring that interlinks through the beam ring -->
+        <circle cx="0" cy="0" r="4.5" fill="none" stroke="#EB6A1D" stroke-width="1.5" />
+        <circle cx="0" cy="0" r="2" fill="#0F172A" />
+
+        <!-- Suspension Chains (Midnight Slate with Orange Link Dots) -->
+        <!-- Center-rear line -->
+        <line x1="0" y1="4" x2="0" y2="114" stroke="#475569" stroke-width="1" stroke-dasharray="2 3" opacity="0.7" />
+        <!-- Front-left line -->
+        <line x1="0" y1="4" x2="-44" y2="116" stroke="#1E293B" stroke-width="1.6" stroke-linecap="round" />
+        <line x1="0" y1="4" x2="-44" y2="116" stroke="#EB6A1D" stroke-width="1.2" stroke-dasharray="3 4" stroke-linecap="round" />
+        <!-- Front-right line -->
+        <line x1="0" y1="4" x2="44" y2="116" stroke="#1E293B" stroke-width="1.6" stroke-linecap="round" />
+        <line x1="0" y1="4" x2="44" y2="116" stroke="#EB6A1D" stroke-width="1.2" stroke-dasharray="3 4" stroke-linecap="round" />
+
+        <!-- Weighing Bowl Underside (Midnight Slate with Warm Orange Glow) -->
+        <path d="M -46 116 Q 0 162 46 116 Q 0 128 -46 116 Z" fill="url(#glPanExterior)" stroke="#0B1120" stroke-width="1" filter="url(#glShadow)" />
+
+        <!-- Weighing Bowl Interior Depth -->
+        <ellipse cx="0" cy="116" rx="46" ry="11" fill="url(#glPanDepth)" stroke="#0F172A" stroke-width="1.5" />
+
+        <!-- Polished Heritage Orange Rim Lip -->
+        <ellipse cx="0" cy="116" rx="46" ry="11" fill="none" stroke="url(#glOrangeGrad)" stroke-width="2" />
+        <ellipse cx="0" cy="116" rx="42" ry="9" fill="none" stroke="#FDE68A" stroke-width="0.8" opacity="0.85" />
+
+        <!-- Engraved Legal Seal Inside Pan (London Roll of Solicitors) -->
+        <g transform="translate(0, 116)">
+          <ellipse cx="0" cy="0" rx="28" ry="5.5" fill="#0B1120" stroke="#EB6A1D" stroke-width="0.8" />
+          <text x="0" y="2" text-anchor="middle" font-family="'Cinzel', Georgia, serif" font-size="5" font-weight="700" fill="#FDE68A" letter-spacing="1">LONDON • 2002</text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>

@@ -3,302 +3,297 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us & Chambers Directory | Groverlaw</title>
-  <meta name="description" content="Contact Groverlaw Chambers in New Delhi (Green Park) and Gurgaon (Sushant Lok I). Telephone, email, office addresses and consultation inquiry.">
-  
+  <title>Contact Chambers &amp; Offices | Groverlaw Advocates &amp; Solicitors</title>
+  <meta name="description" content="Contact Groverlaw Chambers in Green Park, New Delhi and Sushant Lok I, Gurgaon. Dual-qualified counsel for Intellectual Property and Corporate Law. Direct telephone, email, and consultation intake.">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            deepNavy: '#081225',
-            midNavy: '#0f1c3f',
+            obsidian: '#080C14',
+            surface: '#0E1524',
+            surfaceElevated: '#141E33',
             gold: {
-              DEFAULT: '#c59b27',
-              light: '#e5be4a',
-              dark: '#9d7916',
+              DEFAULT: '#C5A880',
+              light: '#DFC5A0',
+              dark: '#98784E',
             },
+            slateText: {
+              primary: '#F8FAFC',
+              secondary: '#CBD5E1',
+              muted: '#94A3B8',
+            }
           },
           fontFamily: {
-            serifHeading: ['Cinzel', 'Georgia', 'serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            cinzel: ['Cinzel', 'Georgia', 'serif'],
+            editorial: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
           }
         }
       }
     }
   </script>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-gold selection:text-deepNavy">
+<body class="bg-obsidian text-slateText-primary font-sans antialiased bg-architectural-grid relative min-h-screen">
 
-  <!-- Top bar -->
-  <div class="bg-deepNavy text-slate-300 text-xs border-b border-gold/20 py-2 px-4 sm:px-8">
+  <!-- Top Strip -->
+  <aside class="bg-black/60 border-b border-white/5 text-[11px] sm:text-xs py-2 px-4 sm:px-8 text-slateText-muted" aria-label="Credentials">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-gold/15 text-gold font-semibold text-[11px] border border-gold/30">
+      <div class="flex items-center gap-2.5 flex-wrap justify-center sm:justify-start">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-gold/10 text-gold font-semibold text-[10px] border border-gold/25 tracking-wide">
           Dual-Qualified Counsel
         </span>
-        <span>Enrolled Advocate (India 1996) • Solicitor (England & Wales 2002)</span>
+        <span>Enrolled Advocate (India, 1996)</span>
+        <span class="text-white/20">•</span>
+        <span>Roll of Solicitors (England &amp; Wales, 2002)</span>
       </div>
-      <div class="flex items-center gap-4 text-[12px]">
-        <a href="tel:+911244145520" class="hover:text-gold transition">+91-124-4145520</a>
-        <a href="mailto:info@groverlaw.in" class="hover:text-gold transition">info@groverlaw.in</a>
+      <div class="flex items-center gap-5 font-medium">
+        <a href="tel:+911244145520" class="hover:text-gold transition flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span>+91-124-4145520</span>
+        </a>
+        <a href="mailto:info@groverlaw.in" class="hover:text-gold transition flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span>info@groverlaw.in</span>
+        </a>
       </div>
     </div>
-  </div>
+  </aside>
 
-  <!-- Navigation -->
-  <nav class="sticky top-0 z-40 nav-glass text-white shadow-xl">
+  <!-- Sticky Navbar -->
+  <header id="mainHeader" class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="bg-white p-1.5 rounded-xl shadow-sm flex items-center gap-2.5">
-          <img src="assets/images/emblem.png" alt="GroverLaw Emblem" class="h-9 w-9 object-contain shrink-0">
-          <img src="assets/images/wordmark.png" alt="GROVERLAW" class="h-4 w-auto object-contain">
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <div class="p-1.5 rounded-lg bg-surface border border-gold/20 group-hover:border-gold/50 transition">
+          <img src="assets/images/emblem.png" alt="Groverlaw Crest" class="h-10 w-10 sm:h-11 sm:w-11 object-contain shrink-0">
         </div>
-        <div class="hidden sm:block border-l border-slate-700/60 pl-3">
-          <p class="text-[10px] tracking-widest text-slate-300 uppercase font-medium">Advocates & Solicitors</p>
+        <div class="flex flex-col justify-center">
+          <img src="assets/images/wordmark.png" alt="GROVERLAW" class="h-4 sm:h-5 w-auto object-contain">
+          <span class="text-[9px] sm:text-[10px] tracking-widest text-gold uppercase font-semibold leading-none mt-1">
+            Advocates &amp; Solicitors
+          </span>
         </div>
       </a>
-      <div class="hidden lg:flex items-center gap-7 text-sm font-medium">
-        <a href="index.html" class="text-slate-200 hover:text-gold transition">Home</a>
-        <a href="about.html" class="text-slate-200 hover:text-gold transition">About Us</a>
-        <a href="expertise.html" class="text-slate-200 hover:text-gold transition">Our Expertise</a>
-        <a href="news.html" class="text-slate-200 hover:text-gold transition">News & Accolades</a>
-        <a href="links.html" class="text-slate-200 hover:text-gold transition">Legal Links</a>
-        <a href="contact.html" class="text-gold font-semibold border-b-2 border-gold pb-1">Contact Us</a>
-      </div>
-      <a href="contact.html" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-gold hover:bg-gold-light text-deepNavy font-bold text-xs uppercase tracking-wider transition">
-        Inquire With Counsel
+
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-slateText-muted" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">Firm Profile</a>
+        <a href="expertise.html" class="nav-link">Our Expertise</a>
+        <a href="news.html" class="nav-link">News &amp; Accolades</a>
+        <a href="links.html" class="nav-link">Legal Portals</a>
+        <a href="contact.html" class="nav-link active font-bold text-slateText-primary">Contact Chambers</a>
+      </nav>
+
+      <a href="tel:+911244145520" class="btn-gold-primary hidden sm:inline-flex px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider">
+        <span>Call Chambers Direct</span>
       </a>
     </div>
-  </nav>
+  </header>
 
-  <!-- Banner -->
-  <header class="bg-gradient-dark text-white py-16 px-4 sm:px-8 border-b border-gold/20">
-    <div class="max-w-7xl mx-auto">
-      <span class="text-xs font-bold uppercase tracking-wider text-gold bg-gold/15 px-3 py-1 rounded-full border border-gold/30">
-        Locations & Engagement
-      </span>
-      <h1 class="mt-3 text-3xl sm:text-5xl font-serifHeading font-bold text-white">Chambers & Contact</h1>
-      <p class="mt-3 text-slate-300 text-base max-w-2xl leading-relaxed">
-        Offices situated in New Delhi and Gurgaon (NCR), providing counsel to domestic enterprises and global corporations.
+  <!-- Header Banner -->
+  <header class="py-16 sm:py-24 border-b border-white/10 bg-radial-highlight">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold mb-3">
+        <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+        <span>Chambers Access</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-cinzel font-bold text-slateText-primary leading-tight">
+        Connect With Our Chambers
+      </h1>
+      <div class="w-16 h-0.5 bg-gold mt-4 mb-5"></div>
+      <p class="text-slateText-secondary text-sm sm:text-base max-w-2xl leading-relaxed">
+        Consultations are conducted by prior appointment at our Delhi Chamber in Green Park Extension and our Corporate Office in Sushant Lok I, Gurgaon.
       </p>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="py-16 max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
+  <!-- Main Section: Form & Locations -->
+  <main class="py-20 max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
     
-    <!-- Top Contact Details Strip -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
       
-      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-center gap-4">
-        <div class="w-12 h-12 rounded-xl bg-deepNavy text-gold flex items-center justify-center shrink-0">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-        </div>
-        <div>
-          <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Email Chambers</span>
-          <a href="mailto:info@groverlaw.in" class="text-sm font-bold text-deepNavy hover:text-gold transition">info@groverlaw.in</a>
-          <span class="text-[11px] text-slate-400 block mt-0.5">Careers: recruitment@groverlaw.in</span>
+      <!-- Intake Form Column -->
+      <div class="lg:col-span-7">
+        <div class="glass-panel-gold rounded-2xl p-7 sm:p-10 border border-gold/30 shadow-2xl space-y-6">
+          <div class="border-b border-white/10 pb-4">
+            <h2 class="text-xl font-cinzel font-bold text-slateText-primary">Initiate Confidential Inquiry</h2>
+            <p class="text-xs text-slateText-muted mt-1">Please provide matter specifics for partner review.</p>
+          </div>
+
+          <form id="consultationForm" class="space-y-4" novalidate>
+            <div style="display:none;" aria-hidden="true">
+              <input type="text" name="website_fax_confirm" tabindex="-1" autocomplete="off" />
+              <input type="hidden" name="csrfToken" value="" />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-slateText-primary mb-1.5">
+                  Full Name <span class="text-gold">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  required 
+                  placeholder="e.g. Ramesh Chandra" 
+                  class="w-full px-4 py-2.5 rounded-xl bg-obsidian border border-white/10 text-slateText-primary placeholder-slateText-muted text-xs sm:text-sm focus:border-gold transition outline-none">
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slateText-primary mb-1.5">
+                  Corporate Email <span class="text-gold">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  placeholder="name@company.com" 
+                  class="w-full px-4 py-2.5 rounded-xl bg-obsidian border border-white/10 text-slateText-primary placeholder-slateText-muted text-xs sm:text-sm focus:border-gold transition outline-none">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="phone" class="block text-xs font-semibold uppercase tracking-wider text-slateText-primary mb-1.5">
+                  Phone / Mobile
+                </label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  placeholder="+91 98100 00000" 
+                  class="w-full px-4 py-2.5 rounded-xl bg-obsidian border border-white/10 text-slateText-primary placeholder-slateText-muted text-xs sm:text-sm focus:border-gold transition outline-none">
+              </div>
+
+              <div>
+                <label for="practiceArea" class="block text-xs font-semibold uppercase tracking-wider text-slateText-primary mb-1.5">
+                  Practice Discipline
+                </label>
+                <select 
+                  id="practiceArea" 
+                  name="practiceArea" 
+                  class="w-full px-4 py-2.5 rounded-xl bg-obsidian border border-white/10 text-slateText-primary text-xs sm:text-sm focus:border-gold transition outline-none">
+                  <option value="Trademarks">Trademarks &amp; Brand Protection</option>
+                  <option value="Patents">Patents &amp; Inventions</option>
+                  <option value="Anti-Counterfeiting">Anti-Counterfeiting &amp; Raids</option>
+                  <option value="Industrial Designs">Industrial Designs &amp; Locarno</option>
+                  <option value="Corporate FDI">FDI, Contracts &amp; RBI Compliance</option>
+                  <option value="Litigation">Commercial Litigation &amp; ADR</option>
+                  <option value="Other">Other Legal Matter</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slateText-primary mb-1.5">
+                Executive Matter Summary <span class="text-gold">*</span>
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4" 
+                required 
+                placeholder="Describe your legal matter, statutory deadlines, or specific inquiry..." 
+                class="w-full px-4 py-2.5 rounded-xl bg-obsidian border border-white/10 text-slateText-primary placeholder-slateText-muted text-xs sm:text-sm focus:border-gold transition outline-none"></textarea>
+            </div>
+
+            <div class="flex items-start gap-2.5 pt-1">
+              <input 
+                type="checkbox" 
+                id="bciDisclaimerAck" 
+                required 
+                class="mt-1 w-4 h-4 rounded bg-obsidian border-white/20 text-gold focus:ring-gold accent-amber-500">
+              <label for="bciDisclaimerAck" class="text-xs text-slateText-muted leading-relaxed">
+                I am reaching out voluntarily of my own accord, without any form of advertisement or solicitation by Groverlaw.
+              </label>
+            </div>
+
+            <div class="pt-2">
+              <button 
+                type="submit" 
+                class="btn-gold-primary w-full sm:w-auto px-8 py-3 rounded-xl text-xs uppercase tracking-wider font-bold">
+                <span>Transmit Confidential Inquiry</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <div id="formAlert" class="hidden mt-4" role="alert"></div>
+
+          <div class="pt-4 border-t border-white/10 text-[11px] text-slateText-muted flex justify-between items-center">
+            <span>Encrypted Transmission via TLS 1.3</span>
+            <span>DPDP Act 2023 Compliant</span>
+          </div>
         </div>
       </div>
 
-      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-center gap-4">
-        <div class="w-12 h-12 rounded-xl bg-deepNavy text-gold flex items-center justify-center shrink-0">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+      <!-- Chambers Contact & Direct Details -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Delhi Chamber Card -->
+        <div class="tilt-card-3d glass-panel rounded-2xl p-6 space-y-3">
+          <div class="flex items-center justify-between border-b border-white/10 pb-3">
+            <h3 class="text-lg font-cinzel font-bold text-slateText-primary">Delhi Chamber</h3>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-gold/15 text-gold border border-gold/30">LITIGATION SEAT</span>
+          </div>
+          <address class="text-xs sm:text-sm text-slateText-secondary not-italic leading-relaxed">
+            H 36 Green Park Extension<br>
+            New Delhi 110016, India
+          </address>
+          <p class="text-xs text-slateText-muted">Adjacent to the Supreme Court of India and Delhi High Court corridor.</p>
         </div>
-        <div>
-          <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Telephone</span>
-          <a href="tel:+911244145520" class="text-sm font-bold text-deepNavy hover:text-gold transition">+91-124-4145520</a>
-          <span class="text-[11px] text-slate-400 block mt-0.5">Mon–Fri: 9:30 AM – 6:30 PM IST</span>
+
+        <!-- Gurgaon Office Card -->
+        <div class="tilt-card-3d glass-panel rounded-2xl p-6 space-y-3">
+          <div class="flex items-center justify-between border-b border-white/10 pb-3">
+            <h3 class="text-lg font-cinzel font-bold text-slateText-primary">Gurgaon Office</h3>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-gold/15 text-gold border border-gold/30">CORPORATE &amp; TRANSACTIONS</span>
+          </div>
+          <address class="text-xs sm:text-sm text-slateText-secondary not-italic leading-relaxed">
+            A 592 Sushant Lok – I<br>
+            Gurgaon, NCR Haryana 122009, India
+          </address>
+          <div class="space-y-1.5 text-xs text-slateText-muted pt-2 border-t border-white/5">
+            <p>Telephone: +91-124-4145520</p>
+            <p>Facsimile: +91-124-4145521</p>
+            <p>Direct Inquiries: info@groverlaw.in</p>
+            <p>Recruitment: recruitment@groverlaw.in</p>
+          </div>
         </div>
+
       </div>
 
-      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-center gap-4">
-        <div class="w-12 h-12 rounded-xl bg-deepNavy text-gold flex items-center justify-center shrink-0">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-        </div>
-        <div>
-          <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Facsimile</span>
-          <span class="text-sm font-bold text-deepNavy">+91-124-4145521</span>
-          <span class="text-[11px] text-slate-400 block mt-0.5">Secure Document Line</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Office Locations & Maps Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      
-      <!-- Delhi Chamber -->
-      <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm space-y-4">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-          <div>
-            <h3 class="text-xl font-bold font-serifHeading text-deepNavy">Delhi Chamber</h3>
-            <p class="text-xs text-amber-700 font-medium">New Delhi (South West Delhi)</p>
-          </div>
-          <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-semibold">Chamber</span>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-          <strong>H 36 Green Park Extension</strong><br>
-          New Delhi 110016<br>
-          India
-        </p>
-        <div class="rounded-xl overflow-hidden border border-slate-200 shadow-inner">
-          <iframe 
-            title="Delhi Chamber Location Map"
-            class="w-full h-64 border-0" 
-            src="https://maps.google.co.in/maps?q=H+36+Green+Park+Extension+New+Delhi+110016,+India&amp;ie=UTF8&amp;hq=&amp;hnear=H-36,+Green+Park+Extension,+Green+Park,+New+Delhi,+South+West+Delhi,+Delhi&amp;t=m&amp;z=14&amp;ll=28.560626,77.204479&amp;output=embed" 
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-
-      <!-- Gurgaon Office -->
-      <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm space-y-4">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-          <div>
-            <h3 class="text-xl font-bold font-serifHeading text-deepNavy">Gurgaon Office</h3>
-            <p class="text-xs text-amber-700 font-medium">NCR Haryana</p>
-          </div>
-          <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-semibold">Corporate Office</span>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-          <strong>A 592 Sushant Lok – I</strong><br>
-          Gurgaon, NCR Haryana 122009<br>
-          India
-        </p>
-        <div class="rounded-xl overflow-hidden border border-slate-200 shadow-inner">
-          <iframe 
-            title="Gurgaon Office Location Map"
-            class="w-full h-64 border-0" 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14029.24151268762!2d77.0738113!3d28.470198000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18e18a2277d3%3A0x5fd67f492adb3943!2s591!5e0!3m2!1sen!2s!4v1404125607133" 
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Inquiry Form -->
-    <div class="bg-deepNavy rounded-2xl p-8 sm:p-12 text-white border border-gold/30 shadow-2xl max-w-4xl mx-auto">
-      <div class="max-w-2xl mb-8">
-        <span class="text-xs font-bold uppercase tracking-wider text-gold bg-gold/15 px-3 py-1 rounded-full border border-gold/30">
-          Preliminary Case Assessment
-        </span>
-        <h3 class="mt-3 text-2xl sm:text-3xl font-serifHeading font-bold text-white">Send An Inquiry To Counsel</h3>
-        <p class="mt-2 text-slate-300 text-xs sm:text-sm leading-relaxed">
-          Please note: Communications through this portal are treated as strictly confidential. In accordance with Bar Council of India guidelines, submission of this form does not establish an attorney-client relationship.
-        </p>
-      </div>
-
-      <form id="consultationForm" class="space-y-4">
-        <!-- Security / Anti-Spam Honeypot & CSRF Fields (Hidden from human users) -->
-        <div style="display:none;" aria-hidden="true">
-          <input type="text" name="website_fax_confirm" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="csrfToken" value="" />
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-              Full Name *
-            </label>
-            <input 
-              type="text" 
-              name="fullName" 
-              required 
-              placeholder="Your Name / Organization" 
-              class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold transition">
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-              Official Email *
-            </label>
-            <input 
-              type="email" 
-              name="email" 
-              required 
-              placeholder="contact@example.com" 
-              class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold transition">
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-              Phone / WhatsApp
-            </label>
-            <input 
-              type="tel" 
-              name="phone" 
-              placeholder="+91..." 
-              class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold transition">
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-              Subject Practice Area
-            </label>
-            <select 
-              name="practiceArea" 
-              class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-gold transition">
-              <option value="Trade Marks">Trade Marks & Brand Protection</option>
-              <option value="Patents">Patents Filing, CRI & Prosecution</option>
-              <option value="Anti-Counterfeiting">Anti-Counterfeiting, Raids & Customs</option>
-              <option value="Industrial Designs">Industrial Designs (Locarno)</option>
-              <option value="Copyright">Copyright & Software</option>
-              <option value="Domain Disputes">Domain Name Disputes (INDRP/UDRP)</option>
-              <option value="Corporate FDI">FDI, Inbound Investment & FEMA</option>
-              <option value="Company Incorporation">Incorporation & Corporate Advisory</option>
-              <option value="Other">Other Legal Matter</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-            Matter Description *
-          </label>
-          <textarea 
-            name="message" 
-            rows="4" 
-            required 
-            placeholder="Please summarize your inquiry or legal requirement..." 
-            class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold transition"></textarea>
-        </div>
-
-        <div class="flex items-start gap-2.5 pt-2">
-          <input 
-            type="checkbox" 
-            id="bciDisclaimerAckContact" 
-            required 
-            class="mt-1 w-4 h-4 rounded text-gold bg-slate-900 border-slate-700 focus:ring-gold">
-          <label for="bciDisclaimerAckContact" class="text-[11px] text-slate-400 leading-snug">
-            I confirm that I am requesting information of my own accord, and there has been no solicitation or advertisement by Groverlaw.
-          </label>
-        </div>
-
-        <button 
-          type="submit" 
-          class="w-full py-3.5 px-6 rounded-xl bg-gold hover:bg-gold-light text-deepNavy font-bold text-sm uppercase tracking-wider shadow-lg transition transform hover:-translate-y-0.5">
-          Submit Confidential Inquiry
-        </button>
-      </form>
-
-      <div id="formAlert" class="hidden"></div>
     </div>
 
   </main>
 
   <!-- Footer -->
-  <footer class="bg-black text-slate-400 text-xs py-8 border-t border-slate-800 text-center">
-    <p>&copy; 1996–2026 Groverlaw. All rights reserved. Bar Council of India compliant website.</p>
+  <footer class="bg-black/80 text-slateText-muted text-xs py-12 border-t border-white/10 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px]">
+      <div>&copy; 1996&ndash;2026 Groverlaw Advocates &amp; Solicitors. All rights reserved.</div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-gold transition">Home</a>
+        <a href="about.html" class="hover:text-gold transition">Firm Profile</a>
+        <a href="expertise.html" class="hover:text-gold transition">Expertise</a>
+        <a href="contact.html" class="hover:text-gold transition">Contact</a>
+      </div>
+    </div>
   </footer>
 
+  <script src="assets/js/3d-scene.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

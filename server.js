@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Groverlaw - Hardened Web & API Server
  * Built-in Node.js with Zero External Dependencies
  * Implements Defense-In-Depth Security Controls:
@@ -58,6 +58,8 @@ const MIME_TYPES = {
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
   '.pdf': 'application/pdf',
+  '.xml': 'application/xml; charset=utf-8',
+  '.webmanifest': 'application/manifest+json; charset=utf-8',
 };
 
 // Security Headers Generator
@@ -384,7 +386,7 @@ const server = http.createServer((req, res) => {
     if (isHtml) {
       res.setHeader('Cache-Control', 'no-cache, must-revalidate');
     } else {
-      res.setHeader('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800');
+      res.setHeader('Cache-Control', 'no-cache, must-revalidate');
     }
 
     res.writeHead(200, { 'Content-Type': contentType });
@@ -398,10 +400,10 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
   console.log(`=======================================================`);
-  console.log(`🏛️  Groverlaw Hardened Legal Server Active`);
-  console.log(`📍 Local URL: http://localhost:${PORT}`);
-  console.log(`🛡️  Security Headers: CSP, HSTS, X-Frame, Nosniff, Permissions`);
-  console.log(`🔒 Protection: CSRF Token API, Honeypot, Input Sanitization`);
-  console.log(`📜 RFC 9116: http://localhost:${PORT}/.well-known/security.txt`);
+  console.log(`️  Groverlaw Hardened Legal Server Active`);
+  console.log(` Local URL: http://localhost:${PORT}`);
+  console.log(`️  Security Headers: CSP, HSTS, X-Frame, Nosniff, Permissions`);
+  console.log(` Protection: CSRF Token API, Honeypot, Input Sanitization`);
+  console.log(` RFC 9116: http://localhost:${PORT}/.well-known/security.txt`);
   console.log(`=======================================================`);
 });

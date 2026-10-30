@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 390" class="w-full h-auto max-w-[420px] select-none" aria-label="Groverlaw - Minimalist Scales of Justice">
+  <defs>
+    <!-- Clean Minimalist Brand Orange Gradient -->
+    <linearGradient id="minOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FA8C16" />
+      <stop offset="100%" stop-color="#EB6A1D" />
+    </linearGradient>
+
+    <!-- Subtle Orange Glow Filter -->
+    <filter id="minGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- STATIC MINIMALIST BASE & STEM (PURE ORANGE) -->
+  <g id="minScaleBase">
+    <!-- Sleek Rounded Base Plinth Tier 1 -->
+    <rect x="165" y="350" width="130" height="8" rx="4" fill="url(#minOrange)" />
+    <!-- Tier 2 Collar -->
+    <rect x="195" y="342" width="70" height="8" rx="3" fill="url(#minOrange)" />
+
+    <!-- Slender Vertical Pillar -->
+    <rect x="227" y="130" width="6" height="212" rx="3" fill="url(#minOrange)" />
+
+    <!-- Minimalist Top Diamond Finial -->
+    <polygon points="230,86 235,98 230,108 225,98" fill="url(#minOrange)" />
+    <circle cx="230" cy="83" r="2.5" fill="#FFA940" />
+  </g>
+
+  <!-- KINEMATICALLY RIGGED ROTATING BEAM & SUSPENDED PANS -->
+  <!-- Fulcrum Pivot Point: (230, 130) -->
+  <g id="scaleKinematicBeam" class="scale-beam-rig">
+
+    <!-- Precision Plumb Needle -->
+    <polygon points="228.8,130 230,96 231.2,130" fill="#D45311" />
+    <circle cx="230" cy="95" r="1.8" fill="#FFA940" />
+
+    <!-- Sleek Minimalist Arched Crossbeam Bar -->
+    <path d="M 230 128 C 190 124 135 122 85 130 C 135 126 190 131 230 131 C 270 131 325 126 375 130 C 325 122 270 124 230 128 Z" fill="url(#minOrange)" />
+
+    <!-- Left Hook Eyelet (Center: 85, 130) -->
+    <circle cx="85" cy="130" r="6" fill="none" stroke="#EB6A1D" stroke-width="2.5" />
+
+    <!-- Right Hook Eyelet (Center: 375, 130) -->
+    <circle cx="375" cy="130" r="6" fill="none" stroke="#EB6A1D" stroke-width="2.5" />
+
+    <!-- Center Fulcrum Pivot Medallion (Center: 230, 130) -->
+    <circle cx="230" cy="130" r="12" fill="url(#minOrange)" filter="url(#minGlow)" />
+    <circle cx="230" cy="130" r="5" fill="#FFFFFF" />
+
+    <!-- LEFT PAN ASSEMBLY (Hook attachment: 85, 130) -->
+    <g transform="translate(85, 130)">
+      <g id="scaleLeftCounterGroup" class="scale-counter-left">
+        <!-- Top Eyelet Anchor Ring -->
+        <circle cx="0" cy="0" r="3.5" fill="none" stroke="#EB6A1D" stroke-width="1.5" />
+
+        <!-- Minimalist Suspension Lines (Zero Detachment) -->
+        <line x1="0" y1="2" x2="-38" y2="104" stroke="#EB6A1D" stroke-width="1.8" stroke-linecap="round" />
+        <line x1="0" y1="2" x2="38" y2="104" stroke="#EB6A1D" stroke-width="1.8" stroke-linecap="round" />
+
+        <!-- Clean Minimalist Weighing Pan (Pure Orange Shallow Bowl) -->
+        <path d="M -40 104 Q 0 138 40 104 Q 0 114 -40 104 Z" fill="url(#minOrange)" />
+        <ellipse cx="0" cy="104" rx="40" ry="5.5" fill="#EB6A1D" />
+        <ellipse cx="0" cy="104" rx="35" ry="3.5" fill="#FFA940" opacity="0.6" />
+      </g>
+    </g>
+
+    <!-- RIGHT PAN ASSEMBLY (Hook attachment: 375, 130) -->
+    <g transform="translate(375, 130)">
+      <g id="scaleRightCounterGroup" class="scale-counter-right">
+        <!-- Top Eyelet Anchor Ring -->
+        <circle cx="0" cy="0" r="3.5" fill="none" stroke="#EB6A1D" stroke-width="1.5" />
+
+        <!-- Minimalist Suspension Lines (Zero Detachment) -->
+        <line x1="0" y1="2" x2="-38" y2="104" stroke="#EB6A1D" stroke-width="1.8" stroke-linecap="round" />
+        <line x1="0" y1="2" x2="38" y2="104" stroke="#EB6A1D" stroke-width="1.8" stroke-linecap="round" />
+
+        <!-- Clean Minimalist Weighing Pan (Pure Orange Shallow Bowl) -->
+        <path d="M -40 104 Q 0 138 40 104 Q 0 114 -40 104 Z" fill="url(#minOrange)" />
+        <ellipse cx="0" cy="104" rx="40" ry="5.5" fill="#EB6A1D" />
+        <ellipse cx="0" cy="104" rx="35" ry="3.5" fill="#FFA940" opacity="0.6" />
+      </g>
+    </g>
+
+  </g>
+</svg>
